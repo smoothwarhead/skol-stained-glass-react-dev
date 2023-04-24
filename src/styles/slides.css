@@ -1,0 +1,102 @@
+.slide-container{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background: rgba(55, 31, 47, 0.5);
+    display: none;
+    
+}
+
+.account-slide, .cart-slide{
+    background: #fff;
+    width: 35%;
+    height: 100%;
+    z-index: 101;
+    position: fixed;
+    right: -100%;
+    top: 0;
+   
+}
+
+.account-slide-hdr{
+    width: 100%;
+    height: 7vh;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.close-icon{
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+
+/* search slide */
+
+
+.search-slide-container{
+    width: 100%;
+    height: 83vh;
+    position: fixed;
+    top: 18vh;
+    left: 0;
+    z-index: 100;
+    /* background: black; */
+    background: rgba(55, 31, 47, 0.6);
+    display: none;
+}
+
+.search-slide{
+    width: 100%;
+    height: 13vh;
+    background: rgba(50, 23, 41, 1);
+    position: relative;
+    top: -30%;
+    left: 0;
+    border-top: 0.5px solid rgba(255, 255, 255, .5);
+    padding: 20px 100px 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+}
+
+.search-bar{
+    width: 95%;
+    height: 100%;
+    /* border: 1px solid white; */
+    
+}
+
+.search-bar input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    padding: 10px 20px;
+    font-size: 1.625em;
+    color: #fff;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.search-bar input:focus{
+    outline: none;
+}
+
+.search-icon{
+    font-size: 2.5em;
+    color: #fff;
+    opacity: .6;
+    
+}
+
+.search-close-icon{
+    font-size: 1.75em;
+    color: #fff;
+    cursor: pointer;
+    margin-left: 30px;
+}

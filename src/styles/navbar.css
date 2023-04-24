@@ -1,0 +1,82 @@
+.navbar{
+    width: 100%;
+    height: 16vh;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 10px 10px 10px;
+    font-family: 'Aviano';
+}
+
+.left-el{
+    width: 15%;
+    height: 100%;
+}
+
+.logo-container{
+    width: 100%;
+    height: 100%;
+   
+}
+
+.nav-logo{
+    width: 100%;
+    height: 100%;
+}
+
+.right-el{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #fff;
+}
+
+.nav-el{
+    display: flex;
+    justify-content: right;
+}
+
+.nav-el-1{
+    width: 100%;
+    height: 40%;
+ 
+}
+.nav-el-1-links {
+    cursor: pointer;
+}
+
+.nav-el-container-1{
+    width: 40%;
+    height: 100%;
+    font-size: 0.75em;
+    font-weight: bold;
+    opacity: 0.75;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+ 
+}
+
+.nav-el-2{
+    width: 100%;
+    height: 50%;
+  
+}
+
+.nav-el-container-2{
+    width: 70%;
+    height: 100%;
+    font-size: 0.875em;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  
+    
+}
+
+.nav-el-container-2 a{
+    color: #fff;
+    text-decoration: none;
+}

@@ -1,0 +1,19 @@
+.cart-slide{
+    background: #2F1326;
+    padding: 40px 30px;
+}
+
+.cart-slide-hdr{
+    width: 100%;
+    height: 7vh;
+    display: flex;
+    color: #fff;
+    justify-content: space-between;
+    border-bottom: 0.5px solid rgba(255, 255, 255, .5) ;
+}
+
+.cart-title{
+    font-size: 1.25em;
+    font-family: "Aviano";
+    font-weight: bold;
+}
