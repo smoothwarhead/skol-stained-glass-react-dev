@@ -18,7 +18,15 @@
     position: fixed;
     right: -100%;
     top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
    
+}
+
+.account-slide{
+    padding: 30px;
 }
 
 .account-slide-hdr{
@@ -111,6 +119,11 @@
     font-family: 'Cinzel', serif;
     color: #fff;
     padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    
 }
 
 .m-header{
@@ -133,12 +146,12 @@
 
 .m-nav-body{
     width: 100%;
-    height: 60%;
-    margin-top: 50px;
+    height: 80%;
+    padding-top: 10%;
     display: flex;
     align-items: center;
-    justify-content: center;
-
+    justify-content: flex-start;
+    flex-direction: column;
 }
 
 .m-nav-body-el a{
@@ -156,7 +169,7 @@
 
 .m-account-el{
     width: 100%;
-    height: 10%;
+    height: 20%;
     display: none;
     font-family: 'Montserrat', sans-serif;
 
@@ -164,7 +177,7 @@
 
 .m-account-el-links{
     opacity: .6;
-    font-size: 0.75em;
+    font-size: 0.875em;
     font-weight: 500;
     text-align: center;
     margin-top: 10px;
@@ -176,24 +189,47 @@
 
 /* media query */
 
-  @media (max-width: 840px) and (min-width: 0px){
 
-    .m-account-el{
-        display: block;
+  @media (max-width: 1290px) and (min-width: 1120px){
+
+    .account-slide, .cart-slide{
+        
+        width: 45%;
+        
+       
     }
 
 
 
   }
+
+  @media (max-width: 1120px) and (min-width: 960px){
+
+    .account-slide, .cart-slide{
+        
+        width: 50%;
+        
+       
+    }
+
+  }
+
+  @media (max-width: 960px) and (min-width: 840px){
+
+    .account-slide, .cart-slide{
+        
+        width: 55%;
+        
+       
+    }
+
+  }
+
+ 
+
   @media (max-width: 840px) and (min-width: 0px){
 
-    .account-slide{
-        width: 100%;
-        z-index: 400;
-    }
-    .cart-slide{
-        width: 100%;
-    }
+   
     .mobile-menu-container{
         width: 100%;
     }
@@ -201,3 +237,35 @@
 
 
   }
+
+  @media (max-width: 840px) and (min-width: 620px){
+
+    .account-slide, .cart-slide{
+        
+        width: 65%;
+        
+       
+    }
+
+  }
+
+  @media (max-width: 620px) and (min-width: 0px){
+
+    .account-slide, .cart-slide{
+        
+        width: 100%;
+        
+       
+    }
+
+  } 
+
+  @media (max-width: 375px) and (min-width: 0px){
+
+    .account-slide{
+        padding: 15px;
+                
+       
+    }
+
+  } 
