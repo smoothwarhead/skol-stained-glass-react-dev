@@ -7,11 +7,10 @@ import NavContext from '../../context/NavContext';
 const SearchSlide = () => {
 
 
-    const { slideSearch, setSlideSearch } = useContext(NavContext);
+    const { slideSearch, setSlideSearch} = useContext(NavContext);
 
     const searchRef = useRef(null);
     const containerRef = useRef(null);
-    const searchInputRef = useRef();
     const tl = useRef();
 
 
@@ -49,19 +48,9 @@ const SearchSlide = () => {
    
    
    
-       }, [slideSearch])
+    }, [slideSearch])
 
 
-       useEffect(() => {
-
-        if(slideSearch && searchInputRef.current){
-            console.log(searchInputRef.current);
-            searchInputRef.current.focus();
-        }        
-         
-   
-   
-       }, [slideSearch])
 
 
   return (
@@ -73,7 +62,7 @@ const SearchSlide = () => {
                     
             />
             <div className="search-bar">
-                <input type="text" placeholder='What are you looking for...' ref={searchInputRef}/>
+                <input type="text" placeholder='What are you looking for...' autoFocus />
             </div>
 
             <HiX 

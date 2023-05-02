@@ -2,6 +2,7 @@ import React from 'react'
 
 import '../App.css'
 import Navbar from '../components/navigation/Navbar';
+import Footer from '../components/navigation/Footer';
 
 const MainLayout = ({ children }) => {
   return (
@@ -14,6 +15,10 @@ const MainLayout = ({ children }) => {
 
         <div className="body-section">
             {children}
+        </div>
+
+        <div className="footer-section">
+            <Footer />
         </div>
     </div>
   )

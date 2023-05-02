@@ -35,7 +35,7 @@ const ForgotSlide = () => {
         
 
 
-    }, [])
+    }, []);
 
 
     useEffect(() => {

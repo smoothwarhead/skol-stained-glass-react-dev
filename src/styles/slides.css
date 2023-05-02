@@ -5,7 +5,7 @@
     top: 0;
     left: 0;
     z-index: 100;
-    background: rgba(55, 31, 47, 0.5);
+    background: rgba(5, 0, 0, 0.5);
     display: none;
     
 }
@@ -44,8 +44,7 @@
     top: 18vh;
     left: 0;
     z-index: 100;
-    /* background: black; */
-    background: rgba(55, 31, 47, 0.6);
+    background: rgba(5, 0, 0, 0.6);
     display: none;
 }
 
@@ -61,15 +60,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    z-index: 101;
 
 }
 
 .search-bar{
     width: 95%;
-    height: 100%;
-    /* border: 1px solid white; */
-    
+    height: 100%;   
 }
 
 .search-bar input{
@@ -88,7 +85,7 @@
 }
 
 .search-icon{
-    font-size: 2.5em;
+    font-size: 2em;
     color: #fff;
     opacity: .6;
     
@@ -100,3 +97,107 @@
     cursor: pointer;
     margin-left: 30px;
 }
+
+
+/* menu slide */
+
+.mobile-menu-container{
+    width: 60%;
+    height: 100%;
+    background: #2F1326;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    font-family: 'Aviano';
+    color: #fff;
+    padding: 30px;
+}
+
+.m-header{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.m-header-right{
+    font-size: 1em;
+    cursor: pointer;
+    
+}
+
+.m-header-right:hover{
+    opacity: 0.7;
+}
+
+.m-nav-body{
+    width: 100%;
+    height: 60%;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.m-nav-body-el a{
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    margin-top: 30px;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.m-nav-body-el a:hover{
+    opacity: .7;
+}
+
+.m-account-el{
+    width: 100%;
+    height: 10%;
+    display: none;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+.m-account-el-links{
+    opacity: .6;
+    font-size: 0.75em;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 10px;
+    cursor: pointer;
+
+}
+
+
+
+/* media query */
+
+  @media (max-width: 840px) and (min-width: 0px){
+
+    .m-account-el{
+        display: block;
+    }
+
+
+
+  }
+  @media (max-width: 840px) and (min-width: 0px){
+
+    .account-slide{
+        width: 100%;
+        z-index: 400;
+    }
+    .cart-slide{
+        width: 100%;
+    }
+    .mobile-menu-container{
+        width: 100%;
+    }
+
+
+
+  }

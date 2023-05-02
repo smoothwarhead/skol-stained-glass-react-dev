@@ -1,28 +1,36 @@
 import '../../styles/slides.css';
 import '../../styles/account.css';
 import { HiX } from 'react-icons/hi';
-import { useRef, useEffect, useContext } from 'react';
+import { useRef, useEffect, useContext, useState } from 'react';
 import { gsap, Power1 } from 'gsap';
 import ForgotSlide from './ForgotSlide';
 import { Link } from 'react-router-dom';
 import NavContext from '../../context/NavContext';
+import FormInput from '../forms/FormInput';
+import usePasswordToggle from '../../hooks/usePasswordToggle';
+import { signInInputs } from '../../files/inputs';
 
+const initialValues = {
+    email: "",
+    password: ""
+}
 
 const AccountSlide = () => {
 
     const accountRef = useRef(null);
     const containerRef = useRef(null);
 
+    const [values, setValues] = useState(initialValues);
+
+
     const { slideAccount, setSlideAccount, setSlideForgot} = useContext(NavContext);
+
+    const {InputType, Icon} = usePasswordToggle();
 
    
 
     const tl = useRef();
 
-
-    // const closeSlideAccount = () => {
-    //     slideAccount();
-    // }
 
     useEffect(() => {
         
@@ -63,6 +71,10 @@ const AccountSlide = () => {
     }
 
 
+    const handleChange = (e) => {
+        setValues({ ...values, [e.target.name]: e.target.value});
+    }
+
     
 
   return (
@@ -88,8 +100,24 @@ const AccountSlide = () => {
                 <div className="account-container">
                     <div className="act-title">Sign In</div>
                     <div className="inp-container">
-                        <input type="text" className="inp-el" placeholder='Email*' />
-                        <input type="text" className="inp-el" placeholder='Password*'/>
+
+
+                        {
+                            signInInputs.map((input, index) => (
+                                <FormInput 
+                                    key={index}
+                                    inputType={input.name === "email" ? "email" : !input.name === "email" && !input.isPassword ? "text" : InputType}
+                                    {...input}
+                                    icon={!input.isPassword ? null : Icon}    
+                                    value={values[input.name]} 
+                                    handleChange={handleChange}  
+                                    isPassword={input.isPassword}
+                                    errorMessage = {input.errorMessage}
+                                />
+                            ))
+                        }
+
+
                     </div>
 
                     <div className="forget-password" onClick={handleForgotClick}>Forgot Password?</div>
@@ -98,7 +126,7 @@ const AccountSlide = () => {
 
                     <div className="no-act-link">
                         <span>Don't have an account?</span>
-                       <Link to="/register"><span className='create-link'>Create Account</span></Link> 
+                       <Link to="/register" onClick={() => setSlideAccount(false)}><span className='create-link'>Create Account</span></Link> 
                     </div>
                 </div>
 
