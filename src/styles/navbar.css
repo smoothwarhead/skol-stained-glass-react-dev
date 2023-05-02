@@ -443,12 +443,12 @@
     }
     
     .mobile-logo{
-        width: 60%;
+        width: 65%;
         
     }
     .m-comp-name{
-        font-size: 0.625em;
-        margin-top: 15px;
+        font-size: 2.725vw;
+        margin-top: 10px;
     }
 
     .m-search-icon{
