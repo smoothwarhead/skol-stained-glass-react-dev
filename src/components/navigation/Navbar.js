@@ -2,7 +2,7 @@ import { useContext, useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import '../../styles/navbar.css';
 import AccountSlide from '../slides/AccountSlide';
-import Logo from '../../files/svgs/Logo';
+import logo from '../../images/Logo.png';
 import { navItems } from './navItems';
 import CartSlide from '../slides/CartSlide';
 import SearchSlide from '../slides/SearchSlide';
@@ -77,7 +77,11 @@ const Navbar = () => {
           <div className="left-el">
               <div className="logo-container">
 
-                <Logo cName="nav-logo"/>
+                <div className="logo-img">
+                  <img src={logo} alt="Logo" />
+
+                </div>
+                <div className="comp-name">Skol Stained Glass</div>
 
               </div>
           </div>
@@ -127,11 +131,18 @@ const Navbar = () => {
           <GiHamburgerMenu className='menu-icon' />
         </div>
 
-        <div className="mobile-logo">
+        <div className="m-logo-container">
+          <div className="mobile-logo">
 
-          <MobileLogo cName="mobile-nav-logo"/>
+            <div className="m-logo-img">
+              <img src={logo} alt="Logo" />
 
+            </div>
+            <div className="m-comp-name">Skol Stained Glass</div>
+
+          </div>
         </div>
+        
 
         <div className="mobile-nav-el">
           <div className="mobile-nav-el-links m-account-link" onClick={handleAccountClick}>
