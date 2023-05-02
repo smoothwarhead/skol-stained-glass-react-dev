@@ -443,11 +443,11 @@
     }
     
     .mobile-logo{
-        width: 65%;
+        width: 75%;
         
     }
     .m-comp-name{
-        font-size: 2.725vw;
+        font-size: 3.25vw;
         margin-top: 10px;
     }
 
@@ -457,16 +457,18 @@
 
     .m-cart-icon{
         font-size: 4em;
+        font-weight: 700;
+
     }
 
     .m-cart-link span{
         font-size: 3em;
+        font-weight: 700;
     }
 
 
     .mobile-nav-el{
-        width: 38%;
-        /* font-size: 2.5vw; */
+        width: 36%;
         padding: 10px 5px;
     }
    

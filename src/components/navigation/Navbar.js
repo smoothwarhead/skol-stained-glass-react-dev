@@ -8,10 +8,9 @@ import CartSlide from '../slides/CartSlide';
 import SearchSlide from '../slides/SearchSlide';
 import NavContext from '../../context/NavContext';
 import MenuSlide from '../slides/MenuSlide';
-import MobileLogo from '../../files/svgs/MobileLogo';
 import { GiHamburgerMenu } from 'react-icons/gi';
-import { GoSearch } from 'react-icons/go';
-import { AiOutlineShoppingCart } from 'react-icons/ai';
+import { FaSearch } from 'react-icons/fa';
+import { HiOutlineShoppingCart } from 'react-icons/hi';
 import useMediaQuery from '../../hooks/useMediaQuery';
 
 
@@ -151,12 +150,12 @@ const Navbar = () => {
 
           <div className="mobile-nav-el-links m-search-link" onClick={handleSearchClick}>
             {/* Search */}
-            {isMax540 && isMin0 ? <GoSearch className='m-search-icon'/> : "Search"}
+            {isMax540 && isMin0 ? <FaSearch className='m-search-icon'/> : "Search"}
           </div>
 
           <div className="mobile-nav-el-links m-cart-link" onClick={handleCartClick}>
             {/* Cart (0) */}
-            {isMax540 && isMin0 ? <AiOutlineShoppingCart className='m-cart-icon'/> : "Cart" }
+            {isMax540 && isMin0 ? <HiOutlineShoppingCart className='m-cart-icon'/> : "Cart" }
             <span>(0)</span>
           </div>
           
