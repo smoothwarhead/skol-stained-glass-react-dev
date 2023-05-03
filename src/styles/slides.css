@@ -175,6 +175,12 @@
 
 }
 
+.m-account-el a{
+    text-decoration: none;
+    color: #fff;
+
+}
+
 .m-account-el-links{
     opacity: .6;
     font-size: 0.875em;

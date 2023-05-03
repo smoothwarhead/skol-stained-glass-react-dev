@@ -62,3 +62,18 @@ export const signInInputs = [
     },
 
 ];
+
+export const forgotInputs = [
+
+
+    {
+        
+        name: "email",
+        placeholder: "Email",
+        isPassword: false,
+        errorMessage: "Please enter a valid email address",
+        
+
+    }
+
+];

@@ -2,7 +2,7 @@ import { useContext, useEffect, useRef } from 'react';
 import '../../styles/slides.css'
 import NavContext from '../../context/NavContext';
 import { gsap, Power1 } from 'gsap';
-import { NavLink } from 'react-router-dom';
+import { NavLink,Link } from 'react-router-dom';
 import { navItems } from '../navigation/navItems';
 import AccountSlide from './AccountSlide';
 
@@ -34,7 +34,7 @@ const MenuSlide = () => {
 
         tl.current.to(menuRef.current, {
             left: 0,
-            duration: 0.7,
+            duration: 0.5,
             ease: Power1.easeInOut
         });
 
@@ -93,7 +93,7 @@ const MenuSlide = () => {
 
                 <div className="m-account-el">
                     <div className="m-account-el-links" onClick={handleSignInClick}>Sign in</div>
-                    <div className="m-account-el-links">Create Account</div>
+                    <Link to="/register" onClick={() => setSlideMenu(false)}><div className="m-account-el-links">Create Account</div></Link>
                 </div>
 
 

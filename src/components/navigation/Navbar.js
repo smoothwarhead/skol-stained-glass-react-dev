@@ -1,5 +1,5 @@
 import { useContext, useEffect } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation, Link } from 'react-router-dom';
 import '../../styles/navbar.css';
 import AccountSlide from '../slides/AccountSlide';
 import logo from '../../images/Logo.png';
@@ -24,6 +24,9 @@ const Navbar = () => {
   useEffect(() => {
     if(location.pathname.includes("register")){
       setIsDark(false);
+    }
+    else{
+      setIsDark(true);
     }
   }, [location, setIsDark])
 
@@ -61,7 +64,7 @@ const Navbar = () => {
   const isMax540 = useMediaQuery('(max-width: 540px)');
   const isMin0 = useMediaQuery('(min-width: 0px)');
 
-  
+ 
 
  
   return (
@@ -74,15 +77,17 @@ const Navbar = () => {
       <div className='navbar'>
 
           <div className="left-el">
+            <Link to="/">
               <div className="logo-container">
 
                 <div className="logo-img">
                   <img src={logo} alt="Logo" />
 
                 </div>
-                <div className="comp-name">Skol Stained Glass</div>
+                <div className={isDark ? "comp-name isDark" : "comp-name isLight"}>Skol Stained Glass</div>
 
               </div>
+            </Link>
           </div>
           
           <div className={isDark ? "right-el isDark" : "right-el isLight"}>
@@ -127,7 +132,7 @@ const Navbar = () => {
       <div className="mobile-navbar">
             
         <div className="mobile-menu-icon" onClick={handleMenuClick}>
-          <GiHamburgerMenu className='menu-icon' />
+          <GiHamburgerMenu className={isDark ? 'menu-icon isDark' : 'menu-icon isLight'} />
         </div>
 
         <div className="m-logo-container">
@@ -137,13 +142,13 @@ const Navbar = () => {
               <img src={logo} alt="Logo" />
 
             </div>
-            <div className="m-comp-name">Skol Stained Glass</div>
+            <div className={isDark ? "m-comp-name isDark" : "m-comp-name isLight" }>Skol Stained Glass</div>
 
           </div>
         </div>
         
 
-        <div className="mobile-nav-el">
+        <div className={isDark ? "mobile-nav-el isDark" : "mobile-nav-el isLight"}>
           <div className="mobile-nav-el-links m-account-link" onClick={handleAccountClick}>
             Account
           </div>

@@ -22,6 +22,9 @@ const AccountSlide = () => {
 
     const [values, setValues] = useState(initialValues);
 
+    const [error, setError] = useState(false);
+
+
 
     const { slideAccount, setSlideAccount, setSlideForgot} = useContext(NavContext);
 
@@ -44,7 +47,7 @@ const AccountSlide = () => {
 
         tl.current.to(accountRef.current, {
             right: 0,
-            duration: 0.7,
+            duration: 0.5,
             ease: Power1.easeInOut
         });
         
@@ -73,6 +76,22 @@ const AccountSlide = () => {
 
     const handleChange = (e) => {
         setValues({ ...values, [e.target.name]: e.target.value});
+    }
+
+
+    const handleSubmit = () => {
+        // e.preventDefault();
+
+        if(values.email === "" || values.password === ""){
+            setError(true);
+        }
+        
+      
+        else{
+            console.log(values);
+        }
+
+
     }
 
     
@@ -113,6 +132,8 @@ const AccountSlide = () => {
                                     handleChange={handleChange}  
                                     isPassword={input.isPassword}
                                     errorMessage = {input.errorMessage}
+                                    error = {error}
+
                                 />
                             ))
                         }
@@ -122,7 +143,7 @@ const AccountSlide = () => {
 
                     <div className="forget-password" onClick={handleForgotClick}>Forgot Password?</div>
 
-                    <div className="sign-in-btn">Sign in</div>
+                    <div className="sign-in-btn" onClick={handleSubmit}>Sign in</div>
 
                     <div className="no-act-link">
                         <span>Don't have an account?</span>

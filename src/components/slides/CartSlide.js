@@ -28,7 +28,7 @@ const CartSlide = ( ) => {
 
       tl.current.to(cartRef.current, {
           right: 0,
-          duration: 0.7,
+          duration: 0.5,
           ease: Power1.easeInOut
       });
       
