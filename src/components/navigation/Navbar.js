@@ -136,15 +136,18 @@ const Navbar = () => {
         </div>
 
         <div className="m-logo-container">
-          <div className="mobile-logo">
 
-            <div className="m-logo-img">
-              <img src={logo} alt="Logo" />
+          
+            <div className="mobile-logo">
+              <Link to="/">
+                <div className="m-logo-img">
+                  <img src={logo} alt="Logo" />
+
+                </div>
+                <div className={isDark ? "m-comp-name isDark" : "m-comp-name isLight" }>Skol Stained Glass</div>
+              </Link>
 
             </div>
-            <div className={isDark ? "m-comp-name isDark" : "m-comp-name isLight" }>Skol Stained Glass</div>
-
-          </div>
         </div>
         
 
