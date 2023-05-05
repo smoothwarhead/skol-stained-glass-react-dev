@@ -108,11 +108,11 @@ const AccountSlide = () => {
 
                 <div className="account-slide-hdr">
             
-                        <HiX 
-                            className='close-icon'
-                            onClick={() => setSlideAccount(false)}
-                            
-                        />
+                    <HiX 
+                        className='close-icon'
+                        onClick={() => setSlideAccount(false)}
+                        
+                    />
                 
                 </div>
 
@@ -133,6 +133,7 @@ const AccountSlide = () => {
                                     isPassword={input.isPassword}
                                     errorMessage = {input.errorMessage}
                                     error = {error}
+                                    cName = "input"
 
                                 />
                             ))

@@ -147,11 +147,6 @@
 
 }
 
-.m-logo-container a{
-    text-decoration: none;
-    cursor: pointer;
- }
-
 
 
 .mobile-menu-icon{
@@ -159,13 +154,13 @@
     width: 25%;
     height: fit-content;
     color: #fff;
-    font-weight: 600;
    
 }
 
 .menu-icon{
     font-size: 2em;
     cursor: pointer;
+    font-weight: 600;
 
 }
 
@@ -186,11 +181,18 @@
     
     width: 30%;
     height: 100%;
-    /* border: 1px solid green; */
+    
     display: block;
     margin: auto;   
       
 }
+
+.mobile-logo a{
+    width: 30%;
+    text-decoration: none;
+    cursor: pointer;
+   
+ }
 
 .m-logo-img img{
     display: block;
@@ -309,13 +311,6 @@
     .m-account-link{
         display: none;
     }
-    /* .m-search-icon{
-        font-size: 2vw;
-    }
-    .m-cart-icon{
-        font-size: 2vw;
-    } */
-   
 
   }
 

@@ -1,0 +1,161 @@
+/* staff form */
+
+.s-acc-container{
+    width: 100%;
+    height: 100%;
+    margin: 30px auto;
+    
+}
+
+.s-acc-title{
+    text-align: center;
+    font-size: 1.25em;
+    color: #1DAE8C;
+    font-weight: 500;
+}
+
+.s-inp-container{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.s-inps{
+    width: 48%;
+}
+
+.s-input{
+    width: 100%;
+    height: 35px;
+    border-radius: 10px;
+    padding: 10px 15px;
+    font-size: 1em;
+    outline: none;
+    margin-top: 5px;
+    border: .5px solid #321729;
+}
+
+.s-input.inp-error{
+    border: 1px solid #dd1c1c;
+}
+
+.s-input::placeholder{
+    font-size: 0.875em;
+}
+
+
+
+.s-acc-footer{
+    width:  60%;
+    margin: 50px auto;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+  
+}
+
+.s-acc-btns{
+    width: fit-content;
+    height: fit-content;
+    font-size: 1vw;
+    border-radius: 10px;
+    padding: 10px 30px;
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    transition: all ease-in-out 0.5s;
+}
+
+
+.s-acc-cancel-btn{
+    background: transparent;
+    color: #E10321;
+    border: 1px solid #E10321;
+    
+}
+
+
+.s-acc-cancel-btn:hover{
+    background: #E10321;
+    color: #ffffff;
+
+}
+
+
+.s-acc-add-btn{
+    background: #1DAE8C;
+    color: #ffffff;
+}
+
+
+.s-acc-add-btn:hover{
+    background: transparent;
+    color: #1DAE8C;
+    border: 1px solid #1DAE8C;
+
+}
+
+
+
+/* media query */
+
+
+@media (max-width: 1140px) and (min-width: 0px){
+
+    .s-acc-footer{
+        width:  100%;
+        padding: 0px 20px;
+       
+    }
+
+    .s-acc-btns{
+        font-size: 0.75em;
+    }
+
+}
+
+
+
+
+
+@media (max-width: 520px) and (min-width: 0px){
+
+    .s-inp-container{
+        display: block;
+    }
+
+    .s-inps{
+        width: 100%;
+    }
+
+    .s-input{
+        font-size: 0.875em;
+        height: 40px;
+    }
+
+    .s-input::placeholder{
+        font-size: 0.8em;
+    }
+
+    .s-acc-footer{
+        width:  100%;
+        padding: 0px;
+       
+    }
+
+    /* .s-acc-btns{
+        font-size: 0.75em;
+    } */
+
+}
+
+
+
+@media (max-width: 350px) and (min-width: 0px){
+
+    .s-acc-btns{
+        font-size: 3vw;
+        padding: 8px 20px;
+    }
+
+}

@@ -112,7 +112,6 @@
 .mobile-menu-container{
     width: 60%;
     height: 100%;
-    background: #2F1326;
     position: fixed;
     top: 0;
     left: -100%;
@@ -126,6 +125,16 @@
     
 }
 
+.site-menu{
+    background: #2F1326;
+
+}
+
+.admin-menu{
+    background: #917B42;
+
+}
+
 .m-header{
     width: 100%;
     height: 10vh;
@@ -137,6 +146,7 @@
 .m-header-right{
     font-size: 1em;
     cursor: pointer;
+    font-weight: 500;
     
 }
 
@@ -161,6 +171,7 @@
     margin-top: 30px;
     text-align: center;
     font-size: 1.5em;
+    font-weight: 500;
 }
 
 .m-nav-body-el a:hover{

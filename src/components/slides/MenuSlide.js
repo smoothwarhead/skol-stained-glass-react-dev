@@ -67,7 +67,7 @@ const MenuSlide = () => {
     <>
         <AccountSlide />
         <div className='slide-container' ref={containerRef}>
-            <div className="mobile-menu-container" ref={menuRef}>
+            <div className="mobile-menu-container site-menu" ref={menuRef}>
                 <div className="m-header">
                     <div className="m-header-left"></div>
                     <div className="m-header-right" onClick={() => setSlideMenu(false)}>Close</div>

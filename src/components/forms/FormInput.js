@@ -15,7 +15,7 @@ const FormInput = (props) => {
 
     
 
-    const {error, inputType, errorMessage, isPassword, icon, handleChange, ...inputProps} = props;
+    const {cName, error, inputType, errorMessage, isPassword, icon, handleChange, ...inputProps} = props;
     const [lowerPassed, setLowerPassed] = useState(false);
     const [numPassed, setNumPassed] = useState(false);
     const [upperPassed, setUpperPassed] = useState(false);
@@ -108,13 +108,15 @@ const FormInput = (props) => {
     <>
         <div className="inp-control">
 
+            {inputProps.hasOwnProperty('label') && <label className={`inp-lbl ${(touched && !isValid) || (error && !isValid) ? "lbl-error" : ""}`}>{inputProps.label}</label>}
+
             <input 
                 type={inputType} 
                 onChange={handleChange}
                 {...inputProps}
                 onBlur={handleTouched}
                 onFocus={handleFocus}
-                className={(touched && !isValid) || (error && !isValid) ? "inp-error" : ""}
+                className={`${cName} ${(touched && !isValid) || (error && !isValid) ? "inp-error" : ""}`}
                 
             />
 

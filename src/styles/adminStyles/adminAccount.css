@@ -1,0 +1,117 @@
+.account-body{
+    width: 100%;
+    height: 100vh;
+    /* background: repeating-linear-gradient(45deg, #393E46 , #212121 ); */
+    background:linear-gradient(25deg,  #212121 30%, #393E46 30%, #393E46 67%, #212121 27%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+.admin-acc-container{
+    width: 50%;
+    height: 80%;
+    margin: 15vh auto;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+}
+
+.log{
+    width: 60%;
+    height: 90%;
+    background: transparent;
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+   
+}
+.login{
+    width: 100%;
+    height: 10%;
+    background: #E2EEEE;
+    font-size: 2em;
+    font-weight: 500;
+    padding: 7px;
+    text-align: center;
+    border-radius: 10px 10px 0 0;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+    
+}
+.log-info{
+    width: 100%;
+    height: fit-content;
+    background: #212121;
+    padding: 15px 30px;
+  
+}
+.log-info h3{
+    color:#F9FCFC;
+    font-size: 1em;
+    margin-bottom: 32px;
+    font-weight: 500;
+    text-align: center;
+  
+}
+/* input{
+    height: 50px;
+    width: 100%;
+    background:#212121;
+    margin-bottom: 15px;
+    border: 1px solid  #4C5050;
+    padding: 10px 15px;
+    color: #fff;
+    font-size: 1.125em;
+} */
+
+/* 
+input:nth-child(5){
+   
+    margin-bottom: 5px;
+}
+input::placeholder{
+    color: #F9FCFC;
+    font-size: 1em;
+    opacity: .5;
+} */
+button{
+    height: 50px;
+    width: 100%;
+    background:#E2EEEE;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5em;
+    font-weight: 500;
+    color: #212121;
+    transition: 0.5s;
+}
+button:hover{
+    background: #b0c8c8;
+}
+.log-info p{
+    font-size: 13px;
+    color: white;
+    margin-bottom: 30px;
+    text-decoration: none;
+}
+/* .log-info p span{
+    color: red;
+    font-size: 17px;
+    font-weight: 800
+} */
+.log-info p a{
+    text-decoration: none;
+    color: #0d9daa;
+    font-size: 15px;
+    transition: 0.2s;
+}
+.log-info p a:hover{
+    color: #73a084;
+}
