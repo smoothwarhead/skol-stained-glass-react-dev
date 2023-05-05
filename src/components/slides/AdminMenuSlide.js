@@ -67,6 +67,7 @@ const AdminMenuSlide = () => {
                         <NavLink
                             to={item.to}
                             key={index}
+                            onClick={() => setSlideAdminMenu(false)}
                         >
                             {item.name}
                         </NavLink>

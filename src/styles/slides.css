@@ -59,9 +59,9 @@
 .search-slide{
     width: 100%;
     height: 13vh;
-    background: rgba(50, 23, 41, 1);
     position: relative;
     top: -30%;
+    background: rgba(50, 23, 41, 1);
     left: 0;
     border-top: 0.5px solid rgba(255, 255, 255, .5);
     padding: 20px 100px 20px 100px;
@@ -72,12 +72,43 @@
 
 }
 
+.admin-search-slide{
+    width: 100%;
+    height: 10vh;
+    position: fixed;
+    background: #917B42;
+    top: -30%;
+    left: 0;
+    border-top: 0.5px solid rgba(255, 255, 255, .5);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 101;
+
+}
+
+
+
+/* .search-admin{
+    top: -30%;
+    background: #917B42;
+
+} */
+
 .search-bar{
     width: 95%;
     height: 100%; 
 }
 
-.search-bar input{
+
+.m-ad-search-bar{
+    width: 95%;
+    height: 100%; 
+    
+}
+
+.search-bar .site-search-input{
     width: 100%;
     height: 100%;
     background: transparent;
@@ -88,8 +119,32 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-.search-bar input:focus{
+
+
+.search-bar .site-search-input:focus{
     outline: none;
+}
+
+.m-ad-search-input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.m-ad-search-input:focus{
+    outline: none;
+}
+
+.m-ad-search-input::placeholder{   
+    font-size: 1em;
+    opacity: .5;
+    color: #fff;
+    
 }
 
 .search-icon{
@@ -242,7 +297,7 @@
        
     }
 
-    .search-bar input{
+    .search-bar .site-search-input{
         font-size: 1.375em;
     }
 
@@ -253,7 +308,7 @@
   @media (max-width: 840px) and (min-width: 540px){
 
 
-    .search-bar input{
+    .search-bar .site-search-input{
         font-size: 1.25em;
     }
 
@@ -286,7 +341,7 @@
         padding: 20px 50px;
     }
 
-    .search-bar input{
+    .search-bar .site-search-input{
         font-size: 1.25em;
     }
   }
@@ -319,7 +374,7 @@
     }
 
  
-    .search-bar input{
+    .search-bar .site-search-input{
         font-size: 1.125em;
     }
 
@@ -329,7 +384,7 @@
 
   @media (max-width: 540px) and (min-width: 440px){
 
-    .search-bar input{
+    .search-bar .site-search-input{
         font-size: 3.75vw;
     }
 
@@ -347,7 +402,7 @@
         height: 80%;
     }
 
-    .search-bar input{
+    .search-bar .site-search-input{
         font-size: 3.75vw;
     }
 
@@ -366,8 +421,22 @@
         height: 70%;
     }
 
-    .search-bar input{
+    .search-bar .site-search-input{
         font-size: 4vw;
     }
 
+    .m-ad-search-input{
+       
+        font-size: 4vw;
+        
+    }    
+  
+    
+    .m-ad-search-input::placeholder{   
+        font-size: 4vw;
+       
+    }
+
   } 
+
+ 

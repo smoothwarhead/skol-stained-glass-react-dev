@@ -6,6 +6,7 @@ import useMediaQuery from '../../hooks/useMediaQuery';
 import NavContext from '../../context/NavContext';
 import { useContext } from 'react';
 import AdminMenuSlide from '../../components/slides/AdminMenuSlide';
+import AdminSearchSlide from '../../components/slides/AdminSearchSlide';
 
 
 const TopBar = () => {
@@ -13,12 +14,13 @@ const TopBar = () => {
     const isMax540 = useMediaQuery('(max-width: 540px)');
     const isMin0 = useMediaQuery('(min-width: 0px)');
 
-    const { setSlideAdminMenu } = useContext(NavContext);
+    const { setSlideAdminSearch, setSlideAdminMenu } = useContext(NavContext);
 
 
   return (
     <>
         <AdminMenuSlide />
+        <AdminSearchSlide />
         <div className="top-bar">
 
             
@@ -32,9 +34,13 @@ const TopBar = () => {
 
                 <div className="top-1">
                     {
-                        isMax540 && isMin0 ? <FaSearch className='a-search-icon'/> : 
+                        isMax540 && isMin0 ? 
+                        <FaSearch 
+                            className='a-search-icon'
+                            onClick={() => setSlideAdminSearch(true)}
+                        /> : 
                     
-                        <input type="text" name="search" placeholder="Type here to search"/>
+                        <input type="text" className='ad-search-input' name="search" placeholder="Type here to search"/>
 
                     }
 

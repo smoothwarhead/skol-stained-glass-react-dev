@@ -58,11 +58,11 @@ const SearchSlide = () => {
         <div className="search-slide" ref={searchRef}>
             <HiSearch 
                 className='search-icon'
-                onClick={() => setSlideSearch(false)}
+                
                     
             />
             <div className="search-bar">
-                <input type="text" placeholder='What are you looking for...' autoFocus />
+                <input type="text" className='site-search-input' placeholder='What are you looking for...' autoFocus />
             </div>
 
             <HiX 
@@ -71,17 +71,7 @@ const SearchSlide = () => {
                     
             />
 
-            
-            {/* <div className="search-slide-hdr">
-            
-                <HiX 
-                    className='close-icon'
-                    onClick={() => setSlideSearch(false)}
-                    
-                />
-        
-            </div> */}
-
+         
         </div>
     </div>
   )
