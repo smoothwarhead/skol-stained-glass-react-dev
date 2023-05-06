@@ -119,6 +119,7 @@ const ForgotSlide = () => {
                                     isPassword={input.isPassword}
                                     errorMessage = {input.errorMessage}
                                     error = {error}
+                                    cName="input"
                                 />
                             ))
                         }

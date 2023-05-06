@@ -15,6 +15,7 @@ export const NavProvider = ({ children }) => {
     const [slideMenu, setSlideMenu] = useState(false);
     const [slideAdminMenu, setSlideAdminMenu] = useState(false);
     const [slideAdminSearch, setSlideAdminSearch] = useState(false);
+    const [slideProfile, setSlideProfile] = useState(false);
 
     const searchInputRef = useRef();
 
@@ -41,7 +42,9 @@ export const NavProvider = ({ children }) => {
             slideAdminMenu, 
             setSlideAdminMenu,
             slideAdminSearch, 
-            setSlideAdminSearch
+            setSlideAdminSearch,
+            slideProfile, 
+            setSlideProfile
 
           }}
         >

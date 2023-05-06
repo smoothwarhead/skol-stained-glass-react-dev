@@ -9,13 +9,9 @@ const AdminSearchSlide = () => {
     const { slideAdminSearch, setSlideAdminSearch} = useContext(NavContext);
 
     const adminSearchRef = useRef(null);
-    const containerRef = useRef(null);
     const tl = useRef();
 
 
-    // useEffect(() => {
-    //     searchInputRef.current.focus();
-    // }, []);
 
 
     useEffect(() => {
@@ -23,12 +19,6 @@ const AdminSearchSlide = () => {
         
         tl.current = gsap.timeline({ paused: true });
 
-        // tl.current.to(containerRef.current, {
-        //     display: "block",
-        //     duration: 0,
-        //     ease: Power1.easeInOut
-            
-        // });
 
         tl.current.to(adminSearchRef.current, {
             top: 0,

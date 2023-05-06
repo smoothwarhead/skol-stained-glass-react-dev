@@ -1,5 +1,5 @@
 import { FaUserCircle } from 'react-icons/fa';
-import { RxCaretDown } from 'react-icons/rx';
+import { RxCaretDown, RxCaretUp } from 'react-icons/rx';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { FaSearch } from 'react-icons/fa';
 import useMediaQuery from '../../hooks/useMediaQuery';
@@ -7,6 +7,7 @@ import NavContext from '../../context/NavContext';
 import { useContext } from 'react';
 import AdminMenuSlide from '../../components/slides/AdminMenuSlide';
 import AdminSearchSlide from '../../components/slides/AdminSearchSlide';
+import AdminProfileSlide from '../../components/slides/AdminProfileSlide';
 
 
 const TopBar = () => {
@@ -14,16 +15,23 @@ const TopBar = () => {
     const isMax540 = useMediaQuery('(max-width: 540px)');
     const isMin0 = useMediaQuery('(min-width: 0px)');
 
-    const { setSlideAdminSearch, setSlideAdminMenu } = useContext(NavContext);
+    const { setSlideAdminSearch, setSlideAdminMenu, slideProfile, setSlideProfile } = useContext(NavContext);
+
+    // const handleHover = () => {
+    //     if(slideProfile){
+    //         setSlideAccount(false);
+    //       }
+      
+    //       setSlideForgot(true);
+    // }
 
 
   return (
     <>
         <AdminMenuSlide />
         <AdminSearchSlide />
-        <div className="top-bar">
-
-            
+        <AdminProfileSlide />
+        <div className="top-bar">            
         
 
             <div className="top-bar-con">
@@ -57,7 +65,18 @@ const TopBar = () => {
                         </div>
 
                         <div className="caret-icon">
-                            <RxCaretDown />
+                            {!slideProfile ?
+                                <RxCaretDown 
+                                    onClick={() => setSlideProfile(true)}
+                                    
+                                />
+
+                                :
+                                <RxCaretUp
+                                    onClick={() => setSlideProfile(false)}
+
+                                />
+                            }
                         </div>
                     </div>
 

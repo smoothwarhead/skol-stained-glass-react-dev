@@ -78,6 +78,7 @@ const CreateAccount = () => {
                                     isPassword={input.isPassword}
                                     errorMessage = {input.errorMessage}
                                     error = {error}
+                                    cName = "input"
                                 />
                             )) 
                         }

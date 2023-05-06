@@ -78,6 +78,7 @@ const SignIn = () => {
                                         isPassword={input.isPassword}
                                         errorMessage = {input.errorMessage}
                                         error = {error}
+                                        cName = "input"
                                     />
 
                                 ))
