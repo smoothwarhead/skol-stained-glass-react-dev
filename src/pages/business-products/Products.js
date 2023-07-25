@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import './products.css'
 import MainLayout from '../../layouts/MainLayout'
 import Loader from '../../components/loader/Loader'
@@ -6,13 +6,17 @@ import useFetch from '../../hooks/useFetch'
 import { BusinessDataContext } from '../../context/BusinessDataContext';
 
 
-// const URL = 
+const URL = "/products"
 
 const Products = () => {
 
-  const {data: products} = useFetch();
+  const {data: products} = useFetch(URL);
 
-  const { pending } = useContext(BusinessDataContext);
+  const { pending, businessProducts, setBusinessProducts } = useContext(BusinessDataContext);
+
+  useEffect(() => {
+    setBusinessProducts(products);
+  }, [products])
 
 
   return (

@@ -26,6 +26,8 @@ const BusinessDataProvider = ({ children }) => {
     <BusinessDataContext.Provider value={{ 
         pending, 
         setPending, 
+        businessProducts,
+        setBusinessProducts
        
     }}
     >
