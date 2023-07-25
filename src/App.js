@@ -1,7 +1,7 @@
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Layout from './layouts/Layout';
-import Products from './pages/Products';
+import Products from './pages/business-products/Products';
 import CreateAccount from './pages/CreateAccount';
 import SignIn from './admin/pages/account/SignIn';
 import Dashboard from './admin/pages/Dashboard';
