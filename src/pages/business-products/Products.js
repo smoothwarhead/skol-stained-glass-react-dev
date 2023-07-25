@@ -2,10 +2,13 @@ import React from 'react'
 import './products.css'
 import MainLayout from '../../layouts/MainLayout'
 import Loader from '../../components/loader/Loader'
+import useFetch from '../../hooks/useFetch'
 
 const Products = () => {
 
-  // const {data} = 
+  const {data: products} = useFetch();
+
+
   return (
     <>
         <MainLayout>
