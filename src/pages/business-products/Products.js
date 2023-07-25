@@ -3,7 +3,10 @@ import './products.css'
 import MainLayout from '../../layouts/MainLayout'
 import Loader from '../../components/loader/Loader'
 import useFetch from '../../hooks/useFetch'
-import { BusinessDataContext } from '../../context/BusinessDataContext'
+import { BusinessDataContext } from '../../context/BusinessDataContext';
+
+
+// const URL = 
 
 const Products = () => {
 

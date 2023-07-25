@@ -2,9 +2,10 @@ import { useState, useContext, useEffect } from "react";
 
 // import { AuthContext } from "../contexts/AuthContext";
 import SessionManager from "../files/SessionManager";
+
+
+import { BusinessDataContext } from "../context/BusinessDataContext";
 import { axiosPrivate } from "../api/axios";
-import { AuthContext } from "../context/AuthContext";
-import { DataContext } from "../context/BusinessDataContext";
 
 
 
@@ -12,10 +13,9 @@ import { DataContext } from "../context/BusinessDataContext";
 const useFetch = (url) => {
 
     const [data, setData] = useState([]);
-    const {setPending} = useContext(DataContext);
+    const {setPending} = useContext(BusinessDataContext);
 
-    
-    const { setLoggedIn } = useContext(AuthContext);    
+      
 
 
 
@@ -30,16 +30,14 @@ const useFetch = (url) => {
 
             const emptyData = [];
 
-            let token = SessionManager.getToken();
-
-            
+                    
 
             try {
 
                 let res = await axiosPrivate.get(url, {
                     headers: {
                         'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${token}`
+                       
                     },
                     
                 });
