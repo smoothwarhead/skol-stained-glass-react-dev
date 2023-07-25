@@ -10,6 +10,7 @@ import Orders from './admin/pages/orders/Orders';
 import Transactions from './admin/pages/Transactions';
 import AdminProducts from './admin/pages/products/AdminProducts';
 import DashboardLayout from './layouts/DashboardLayout';
+import BusinessDataProvider from './context/BusinessDataContext';
 
 function App() {
   return (
@@ -18,14 +19,18 @@ function App() {
 
         <Routes>
 
-          <Route path="/" element={ <Layout /> }> 
+          <BusinessDataProvider>
 
-            <Route path="/" element={ <Products /> } /> 
-            <Route path="/register" element={ <CreateAccount /> } /> 
+            <Route path="/" element={ <Layout /> }> 
+
+              <Route path="/" element={ <Products /> } /> 
+              <Route path="/register" element={ <CreateAccount /> } /> 
 
 
-            
-          </Route>
+              
+            </Route>
+
+          </BusinessDataProvider>
 
 
           <Route path="/access-auth/business/account" element={ <SignIn /> } /> 
