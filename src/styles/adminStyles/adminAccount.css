@@ -21,14 +21,10 @@
 }
 
 .log{
-    width: 60%;
+    width: 70%;
     height: 90%;
     background: transparent;
-    /* position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
-   
+    
 }
 .login{
     width: 100%;
@@ -50,35 +46,27 @@
     padding: 15px 30px;
   
 }
+
+.fa-log-info{
+    width: 100%;
+    height: fit-content;
+    background: #fff;
+    padding: 15px 30px;
+}
+
+.fa-log-info span{
+    font-size: 0.875em;
+}
+
 .log-info h3{
     color:#F9FCFC;
     font-size: 1em;
     margin-bottom: 32px;
     font-weight: 500;
     text-align: center;
-  
+     
 }
-/* input{
-    height: 50px;
-    width: 100%;
-    background:#212121;
-    margin-bottom: 15px;
-    border: 1px solid  #4C5050;
-    padding: 10px 15px;
-    color: #fff;
-    font-size: 1.125em;
-} */
 
-/* 
-input:nth-child(5){
-   
-    margin-bottom: 5px;
-}
-input::placeholder{
-    color: #F9FCFC;
-    font-size: 1em;
-    opacity: .5;
-} */
 button{
     height: 50px;
     width: 100%;
@@ -101,11 +89,7 @@ button:hover{
     margin-bottom: 30px;
     text-decoration: none;
 }
-/* .log-info p span{
-    color: red;
-    font-size: 17px;
-    font-weight: 800
-} */
+
 .log-info p a{
     text-decoration: none;
     color: #0d9daa;
@@ -114,4 +98,104 @@ button:hover{
 }
 .log-info p a:hover{
     color: #73a084;
+}
+
+
+
+@media (max-width: 1120px) and (min-width: 960px){
+   .log{
+    width: 80%;
+   }
+
+
+
+   .log-info h3{
+    font-size: 1.5vw;
+   }
+
+
+}
+
+@media (max-width: 980px) and (min-width: 0px){
+   .log{
+    width: 100%;
+   }
+
+ 
+
+
+}
+
+
+@media (max-width: 980px) and (min-width: 840px){
+   
+
+   .log-info h3{
+    font-size: 1.65vw;
+   }
+
+
+}
+
+@media (max-width: 980px) and (min-width: 840px){   
+
+   .log-info h3{
+    font-size: 1.65vw;
+   }
+
+
+}
+
+@media (max-width: 840px) and (min-width: 768px){   
+
+   .log-info h3{
+    font-size: 1.65vw;
+   }
+
+
+}
+
+
+@media (max-width: 768px) and (min-width: 580px){   
+
+    .admin-acc-container{
+        width: 70%;
+    }
+
+ 
+}
+
+@media (max-width: 580px) and (min-width: 440px){   
+
+    .admin-acc-container{
+        width: 80%;
+    }
+
+    .login{
+        font-size: 1.75em;
+    }
+
+    .log-info h3{
+        font-size: 2.65vw;
+    }
+
+ 
+}
+
+
+@media (max-width: 440px) and (min-width: 0px){   
+
+    .admin-acc-container{
+        width: 90%;
+    }
+
+    .login{
+        font-size: 1.75em;
+    }
+
+    .log-info h3{
+        font-size: 3.5vw;
+    }
+
+ 
 }

@@ -8,6 +8,7 @@ import { useContext } from 'react';
 import AdminMenuSlide from '../../components/slides/AdminMenuSlide';
 import AdminSearchSlide from '../../components/slides/AdminSearchSlide';
 import AdminProfileSlide from '../../components/slides/AdminProfileSlide';
+import SessionManager from '../../files/SessionManager';
 
 
 const TopBar = () => {
@@ -16,6 +17,8 @@ const TopBar = () => {
     const isMin0 = useMediaQuery('(min-width: 0px)');
 
     const { setSlideAdminSearch, setSlideAdminMenu, slideProfile, setSlideProfile } = useContext(NavContext);
+
+    const userName = SessionManager.getUserName();
 
     // const handleHover = () => {
     //     if(slideProfile){
@@ -48,7 +51,7 @@ const TopBar = () => {
                             onClick={() => setSlideAdminSearch(true)}
                         /> : 
                     
-                        <input type="text" className='ad-search-input' name="search" placeholder="Type here to search"/>
+                        <input type="text" className='ad-search-input' name="search" placeholder="Type here to search" autoComplete="off"/>
 
                     }
 
@@ -61,7 +64,7 @@ const TopBar = () => {
                         </div>
 
                         <div className="user-name">
-                            Simeon Adewale
+                            {userName}
                         </div>
 
                         <div className="caret-icon">

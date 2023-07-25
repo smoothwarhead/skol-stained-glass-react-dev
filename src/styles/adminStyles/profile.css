@@ -1,0 +1,335 @@
+/* .profile-section{
+
+} */
+
+
+.profile-el{
+    background: #f5e5e0;
+    display: block;
+    width: 80%;
+    height: fit-content;
+    padding: 20px;
+    margin-bottom: 20px; 
+    color: #584B26;
+
+
+}
+
+.profile-el-con{
+  
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.profile-el-left{
+    width: 80%;
+   
+}
+
+.profile-el-pwd-con{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+
+}
+
+.profile-el-right{
+    width: fit-content;
+   
+}
+
+.profile-el-edit-btn{
+    
+    text-align: right;
+    font-size: 0.875em;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: underline;
+    transition: all 0.7s ease-in-out;
+}
+
+.profile-el-edit-btn:hover{
+   opacity: 0.6;
+}
+
+.profile-el-title{
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+.profile-el-text{
+    width: 100%;
+    margin-top: 15px;
+
+}
+
+.profile-el-text-con{
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.profile-el-text-pwd{
+    width: 70%;
+   
+}
+
+.profile-el-text-con-lbl{
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.profile-el-text-con-txt{
+    font-size: 1em;
+    margin-left: 20px;
+}
+
+.profile-el-con-add{
+    width: 100%;
+   
+}
+
+.no-data-con{
+    margin-top: 20px;
+}
+
+.no-data{
+    font-size: 0.875em;
+}
+
+.add-addr-btn{
+    width: fit-content;
+    height: fit-content;
+    font-weight: 500;
+    padding: 10px 40px;
+    text-align: center;
+    border: 1px solid #917B42;
+    margin-top: 15px;
+    transition: all ease-in-out 0.7s;
+    cursor: pointer;
+}
+
+.add-addr-btn:hover{
+   
+    background: #917B42;
+    color: #fff;    
+}
+
+.el-addr-con{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding: 10px 15px;
+    border: 0.5px solid #917B42;
+    border-radius: 20px;
+}
+
+.el-addr-con-left{
+    width: 90%;
+
+}
+
+.el-addr{
+    font-size: 1em;
+    font-weight: 400;
+    margin-top: 5px;
+
+}
+
+.addr-name{
+    font-weight: 600;
+}
+
+.addr-text{
+    width: 100%;
+}
+
+.el-addr-btns{
+    margin: 10px 0;
+
+    /* border: 0.5px solid #917B42; */
+    text-align: right;
+    width: fit-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.el-addr-btn{
+    text-align: right;
+    font-size: 0.875em;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.el-addr-btn:hover{
+    opacity: 0.5;
+}
+
+
+
+
+@media (max-width: 960px) and (min-width: 720px){
+
+    .profile-el{
+        width: 90%;
+
+    }
+
+    .profile-el-edit-btn{
+        font-size: 0.75em;
+    }
+}
+
+
+@media (max-width: 720px) and (min-width: 520px){
+
+    .profile-el{
+        width: 100%;
+
+    }
+
+    .profile-el-edit-btn{
+        font-size: 2.25vw;
+    }
+
+
+    .profile-el-title{
+        font-size: 1.25em;
+        
+    }
+
+    .profile-el-text{
+       margin-top: 5px;
+    
+    }
+
+    .profile-el-text-con-lbl{
+        font-size: 2.375vw;
+
+    }
+    
+    .profile-el-text-con-txt{
+        font-size: 2.375vw;
+
+    }
+
+    .el-addr-btn{
+        font-size: 2.25vw;
+    }
+
+    .el-addr{
+        font-size: 2.375vw;
+        
+    }
+
+
+}
+
+
+@media (max-width: 520px) and (min-width: 375px){
+
+    .profile-el{
+        width: 100%;
+
+    }
+
+    .profile-el-edit-btn{
+        font-size: 2.375vw;
+    }
+
+
+    .profile-el-title{
+        font-size: 1em;
+        
+    }
+
+    .profile-el-text{
+       margin-top: 5px;
+       
+    }
+
+
+
+    .profile-el-text-con-lbl{
+        font-size: 2.75vw;
+
+    }
+    
+    .profile-el-text-con-txt{
+        font-size: 2.75vw;
+
+    }
+
+    .el-addr-btn{
+        font-size: 2.375vw;
+    }
+
+    .el-addr{
+        font-size: 2.75vw;
+        
+    }
+
+
+}
+
+
+@media (max-width: 375px) and (min-width: 0px){
+
+    .profile-el{
+        width: 100%;
+        padding: 10px;
+
+    }
+
+    .profile-el-edit-btn{
+        font-size: 2.75vw;
+    }
+
+
+    .profile-el-title{
+        font-size: 0.875em;
+        
+    }
+
+    .profile-el-text{
+       margin-top: 0px;
+       
+    }
+
+
+
+    .profile-el-text-con-lbl{
+        font-size: 3.75vw;
+
+    }
+    
+    .profile-el-text-con-txt{
+        font-size: 3.75vw;
+        margin-left: 10px;
+
+    }
+    .el-addr-con{
+        padding: 5px;
+        border-radius: 0px;
+
+    }
+
+    .el-addr-btn{
+        font-size: 2.375vw;
+    }
+
+    .el-addr{
+        font-size: 3.75vw;
+        
+    }
+
+
+}

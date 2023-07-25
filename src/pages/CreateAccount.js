@@ -76,6 +76,7 @@ const CreateAccount = () => {
                                     value={values[input.name]} 
                                     handleChange={handleChange}  
                                     isPassword={input.isPassword}
+                                    validate={input.validate}
                                     errorMessage = {input.errorMessage}
                                     error = {error}
                                     cName = "input"

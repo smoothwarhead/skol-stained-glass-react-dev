@@ -25,3 +25,47 @@
   margin: auto;
 
 }
+
+
+.loader{
+  width: 100%;
+  height: 100%;
+  
+}
+
+.loader-icon-container{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+
+.loading-icon{
+  fill: #1A272A;
+  width: 20%;
+  height: 20%;
+  /* margin: 30%; */
+  animation: rotate 5s infinite linear;
+  
+ 
+}
+
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+      
+      transform: rotate(360deg);
+
+  }
+
+
+
+} 

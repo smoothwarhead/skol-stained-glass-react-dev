@@ -2,11 +2,16 @@ import React, { useContext, useEffect, useRef } from 'react'
 import NavContext from '../../context/NavContext';
 import { gsap, Power1 } from 'gsap';
 import { Link } from 'react-router-dom';
+import useApi from '../../hooks/useApi';
+import { AuthContext } from '../../context/AuthContext';
 
 
 const AdminProfileSlide = () => {
 
-    const {slideProfile } = useContext(NavContext);
+    const {slideProfile, setSlideProfile } = useContext(NavContext);
+    const { adminLogout } = useApi();
+
+    const { user } = useContext(AuthContext);
 
     const pSlideRef = useRef();
     const pContainerRef = useRef();
@@ -44,6 +49,15 @@ const AdminProfileSlide = () => {
    
     }, [slideProfile])
 
+
+    const handleLogout = () => {
+        adminLogout();
+    }
+
+    const handleProfileClick = () => {
+        setSlideProfile(false);
+    }
+
   return (
 
     <>
@@ -51,8 +65,13 @@ const AdminProfileSlide = () => {
 
             <div className="profile-slide" ref={pSlideRef}>
                 <Link>My Account</Link>
-                <Link>Profile</Link>
-                <Link>Logout</Link>
+                <Link 
+                    to={`/access-auth/business/admin/profile/${user}`}
+                    onClick={handleProfileClick}
+                >
+                    Profile
+                </Link>
+                <span onClick={handleLogout}>Logout</span>
             </div>
         </div>
         

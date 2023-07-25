@@ -14,13 +14,18 @@ const usePasswordToggle = () => {
     const [isDark, setIsDark] = useState(false);
 
     useEffect(() => {
-        if(location.pathname.includes("access-auth")){
+        if(location.pathname.includes("access-auth/business/account")){
         setIsDark(true);
         }
         else{
         setIsDark(false);
         }
     }, [location, setIsDark]);
+
+    const handleVisibility = (e) => {
+        
+        setVisibility(!visible)
+    }
 
 
 
@@ -29,14 +34,35 @@ const usePasswordToggle = () => {
         visible ? 
             <FaEyeSlash 
                 className={isDark ? 'password-icon iconLight' : 'password-icon iconDark'} 
-                onClick={() => setVisibility(!visible)}
+                name=''
+                onClick={handleVisibility}
             /> 
             : 
             <FaEye 
                 className={isDark ? 'password-icon iconLight' : 'password-icon iconDark'}  
-                onClick={() => setVisibility(!visible)}
+                onClick={handleVisibility}
             />
     );
+
+
+    // const Icon = () => {
+    //     if(visible){
+    //         <FaEyeSlash 
+    //             className={isDark ? 'password-icon iconLight' : 'password-icon iconDark'} 
+    //             name=''
+    //             onClick={handleVisibility}
+    //         /> 
+    //     }
+
+    //     else{
+    //         <FaEye 
+    //             className={isDark ? 'password-icon iconLight' : 'password-icon iconDark'}  
+    //             onClick={handleVisibility}
+    //         />
+    //     }
+    // }
+
+
 
     const InputType = visible ? "text" : "password";
 

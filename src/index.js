@@ -3,14 +3,20 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import { NavProvider } from './context/NavContext';
+import AuthProvider from './context/AuthContext';
+import DataProvider from './context/DataContext';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <NavProvider>
-      <App />
-    </NavProvider>
+    <AuthProvider>
+      <DataProvider>
+        <NavProvider>
+          <App />
+        </NavProvider>
+      </DataProvider>
+    </AuthProvider>
   </React.StrictMode>
 );
 

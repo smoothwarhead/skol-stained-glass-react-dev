@@ -1,4 +1,5 @@
 
+
 import '../../styles/adminStyles/modal.css';
 
 
@@ -6,22 +7,23 @@ import '../../styles/adminStyles/modal.css';
 
 
 
-const Modal = ({ setModalOpen, modalBody, modalType }) => {
 
+const Modal = ({ modalBody, modalType, closeModal }) => {
 
-   
-
+  
 
 
   return (
     <>
         <div className='modal-background'>
             
-            <div className={modalType === "form" ? "form-modal-container" : "modal-container"}>
+            <div 
+              className={modalType === "form" ? "form-modal-container"  : modalType === "error" ? "error-modal-container" : modalType === "form-address" ? "form-addr-modal-container" : "modal-container"}
+            >
                 
                 <div className="modal_header">
                     {/* <div className="modal_title">Add Staff</div> */}
-                    <div className="modal_return" onClick={() => setModalOpen(false)}>Back</div>
+                    <div className="modal_return" onClick={closeModal}>Back</div>
                 </div>
                 
 
