@@ -10,12 +10,12 @@ const FormInput = (props) => {
     const [touched, setTouched] = useState(false);
 
 
-    const conRef = useRef(null);
+    const conRef = useRef();
     const tl = useRef();
 
     
 
-    const {cName, error, inputType, errorMessage, isPassword, icon, handleChange, ...inputProps} = props;
+    const {cName, error, inputType, errorMessage, isPassword, icon, isCard, validate, handleChange, ...inputProps} = props;
     const [lowerPassed, setLowerPassed] = useState(false);
     const [numPassed, setNumPassed] = useState(false);
     const [upperPassed, setUpperPassed] = useState(false);
@@ -95,6 +95,7 @@ const FormInput = (props) => {
     }, [])
 
    
+   
     useEffect(() => {
         
         focused ? tl.current.play() : tl.current.reverse()
@@ -116,26 +117,30 @@ const FormInput = (props) => {
                 {...inputProps}
                 onBlur={handleTouched}
                 onFocus={handleFocus}
-                className={`${cName} ${(touched && !isValid) || (error && !isValid) ? "inp-error" : ""}`}
+                className={`${cName} ${validate ? ((touched && !isValid) || (error && !isValid) ? "inp-error" : "") : ""}`}
                 
             />
 
-            {
-                inputProps.name === "email" ?
-                ((touched && !/^([a-zA-Z0-9_]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/.test(inputProps.value)) || (touched && !isValid) || (error && !isValid) ? 
-                
-                    <span className="inp-error-msg">{errorMessage}</span> : <div></div>
+            {validate ?
+                (
+                    inputProps.name === "email" ?
+                    ((touched && !/^([a-zA-Z0-9_]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/.test(inputProps.value)) || (touched && !isValid) || (error && !isValid) ? 
+                    
+                        <span className="inp-error-msg">{errorMessage}</span> : <div></div>
+                    )
+                    :
+                    (touched && !isValid) || (error && !isValid) ? <span className="inp-error-msg">{errorMessage}</span> : <div></div>
                 )
                 :
-                (touched && !isValid) || (error && !isValid) ? <span className="inp-error-msg">{errorMessage}</span> : <div></div>
-                
+                <span></span>
             }
       
-            <span className="password-toggle">{icon}</span>
+            {isPassword && <span className="password-toggle">{icon}</span>}
+            {isCard && <span className="card-icon">{icon}</span>}
 
             
             {
-                isPassword &&
+               (validate && isPassword) &&
                 (
                     <div className="password-cons" ref={conRef}>
 
@@ -147,6 +152,7 @@ const FormInput = (props) => {
                     </div>
                     
                 )
+              
             }
 
         </div>

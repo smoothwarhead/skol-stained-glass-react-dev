@@ -58,7 +58,7 @@ const AccountSlide = () => {
 
     useEffect(() => {
         
-     slideAccount ? tl.current.play() : tl.current.reverse()
+     slideAccount ? tl.current.play() : tl.current.reverse();
 
 
 

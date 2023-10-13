@@ -1,7 +1,7 @@
 export const navItems = [
     {
         name: "All Products",
-        to: "/products"
+        to: "/"
     },
     {
         name: "Customize",

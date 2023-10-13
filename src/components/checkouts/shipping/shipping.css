@@ -1,0 +1,106 @@
+.shipping-container{
+    display: block;
+    width: 100%;
+    height: fit-content;
+    padding: 30px 0;
+    margin-top: 60px;
+    /* border: 1px solid red; */
+}
+
+.contact-info-items{
+    width: 100%;
+    height: fit-content;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    padding: 10px 10px 10px 20px;
+    font-family: 'Montserrat', sans-serif;
+    
+}
+
+.contact-info-items-el{
+    width: 100%;
+    height: fit-content;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   
+}
+
+.contact-info-items-el:first-child, .contact-info-items-el:nth-child(2){
+   border-bottom: 1px solid rgb(134, 134, 134, 50%);
+   
+}
+
+.contact-info-items-el-1{
+    font-size: 14px;
+    text-align: left;
+    font-weight: 500;
+  
+}
+
+.contact-info-items-el-2{
+    width: 70%;
+    font-size: 12px;
+    text-align: left;
+    font-weight: 500;
+   
+}
+
+.contact-info-items-el-3{
+    background: #F9F1F3 0% 0% no-repeat padding-box;
+    width: fit-content;
+    height: fit-content;
+    padding: 5px 8px;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-info-items-el-3:hover{
+    background: #f7e0e6 0% 0% no-repeat padding-box;
+   
+}
+
+.methods-con{
+    display: block;
+    margin: 10px 0;
+    /* padding: 20px 0; */
+}
+
+.shipping-btn-container{
+    display: block;
+    width: 100%;
+    height: fit-content;
+    margin-top: 70px;
+   
+}
+
+.shipping-btn-container-flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    margin-top: 20px;
+    border: 1px solid red;
+   
+}
+
+.return-to-info{  
+    font-family: 'Montserrat', sans-serif;
+    color: #321729;  
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.return-to-info:hover{
+    opacity: .5;
+}
+
+.shipping-btn-con{
+    width: 40%;
+}

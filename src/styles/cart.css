@@ -17,3 +17,68 @@
     font-family: "Aviano";
     font-weight: bold;
 }
+
+.cart-slide-body{
+    width: 100%;
+    height: 80vh;
+    margin: 30px 5px 10px 5px;
+    overflow-y: scroll;
+   
+}
+
+.cart-slide-body::-webkit-scrollbar{
+    width: 1px;
+}
+.cart-slide-body::-webkit-scrollbar-thumb{
+    background:transparent;
+    border-radius: 10px;
+}
+
+.empty-cart{
+    display: block;
+    width: fit-content;
+    margin: auto;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+
+}
+
+.sub-total-con{
+    width: 100%;
+    height: 6vh;
+    padding: 0 20px;
+    border-top: 1px solid rgb(255, 255, 255, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    font-family: "Aviano", 'Cinzel', serif;
+}
+
+.sub-total-value{
+    font-size: 24px;
+
+}
+
+.checkout-btn{
+    background: #fff;
+    width: 100%;
+    height: 5vh;
+    font-family: "Aviano", 'Cinzel', serif;
+    text-transform: uppercase;
+    color: #2F1326;
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: all 0.7s ease-in-out;
+}
+
+.checkout-btn:hover{
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+}

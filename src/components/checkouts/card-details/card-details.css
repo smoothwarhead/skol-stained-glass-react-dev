@@ -1,0 +1,31 @@
+.sub-input{
+    width: 100%;
+    background: transparent;
+    height: 40px;
+    color: #321729;
+    padding: 8px 15px;
+    font-size: 14px;
+    outline: none;
+    border: 1px solid rgb(93, 81, 37, 0.5);
+    border-radius: 8px;
+
+}
+
+/* .sub-input.inp-error{
+    border: 1px solid #dd1c1c;
+} */
+
+
+
+.sub-con-flex{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sub-con-flex-1{
+    width: 45%;
+}
+.sub-con-flex-2{
+    width: 30%;
+}

@@ -1,12 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 import '../App.css'
 import Navbar from '../components/navigation/Navbar';
 import Footer from '../components/navigation/Footer';
+import NavContext from '../context/NavContext';
 
 const MainLayout = ({ children }) => {
+
+  const {slideAccount, slideCart, slideMenu, slideSearch} = useContext(NavContext);
+
+  const checkSlide = slideAccount || slideCart || slideMenu || slideSearch;
+
+
   return (
-    <div className='main-page'>
+    <div className={`main-page ${checkSlide ? "slide-open" : ""}`}>
 
         <div className="nav-section">
           <Navbar />

@@ -1,0 +1,46 @@
+.form-modal-footer{
+    width: 100%;
+    height: fit-content;
+   
+}
+
+
+.form-modal-footer-items{
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid blue;
+
+
+}
+
+.form-modal-btns{
+    width: fit-content;
+    height: fit-content;
+    padding: 5px 30px;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 0.875em;
+    transition: all ease-in-out 0.7s;
+
+}
+
+
+
+.form-modal-cancel-btn{   
+    background: #BE0A16;    
+    border: 1px solid #BE0A16;
+    color: #fff;
+
+}
+
+.form-modal-create-btn{
+    background: #7E44AB;
+    color: #fff;   
+    
+}

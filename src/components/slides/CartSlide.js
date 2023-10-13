@@ -3,12 +3,22 @@ import { useRef, useEffect, useContext } from 'react';
 import { gsap, Power1 } from 'gsap';
 import '../../styles/cart.css';
 import NavContext from '../../context/NavContext';
+import { BusinessDataContext } from '../../context/BusinessDataContext';
+import CartItem from '../cart/CartItem';
+import { useNavigate } from 'react-router-dom';
+
 
 
 const CartSlide = ( ) => {
 
 
   const { slideCart, setSlideCart } = useContext(NavContext);
+  const { cartItems, cartSubTotal } = useContext(BusinessDataContext);
+
+
+
+  const navigate = useNavigate();
+
   const cartRef = useRef(null);
   const containerRef = useRef(null);
 
@@ -43,7 +53,10 @@ const CartSlide = ( ) => {
 
 
 
-  }, [slideCart])
+  }, [slideCart]);
+
+
+
 
 
 
@@ -68,6 +81,45 @@ const CartSlide = ( ) => {
                   
               />
               
+            </div>
+
+            <div className="cart-slide-body">
+
+              {
+                cartItems.length === 0 ?
+                <span className='empty-cart'>Oh no! It appears your cart is empty.</span>
+
+                : 
+                
+                <>
+
+                  {
+                    cartItems.map((item, index) => (
+                      <CartItem
+                        key={index}
+                        item={item}
+
+                      />
+                    ))
+                  }
+
+                  <div className="sub-total-con">
+                    <span className='sub-total-title'>Subtotal</span>
+                    <span className='sub-total-value'>{`$${cartSubTotal.toFixed(2)}`}</span>
+                  </div>
+
+                  <div 
+                    className="checkout-btn"
+                    onClick={() => navigate("/checkout")}
+                  >
+                    Checkout
+                  </div>
+
+                </>
+              }
+
+              
+
             </div>
 
 

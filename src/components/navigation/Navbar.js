@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { NavLink, useLocation, Link } from 'react-router-dom';
 import '../../styles/navbar.css';
 import AccountSlide from '../slides/AccountSlide';
@@ -12,17 +12,22 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 import { FaSearch } from 'react-icons/fa';
 import { HiOutlineShoppingCart } from 'react-icons/hi';
 import useMediaQuery from '../../hooks/useMediaQuery';
+import { BusinessDataContext } from '../../context/BusinessDataContext';
 
 
 
 const Navbar = () => {
 
   const {setSlideAccount, setSlideMenu, slideSearch, setSlideCart, setSlideSearch, isDark, setIsDark} = useContext(NavContext);
+
+  const { cartItems } = useContext(BusinessDataContext);
+
+  const [totalItems, setTotalItems] = useState(0);
   
   const location = useLocation();
 
   useEffect(() => {
-    if(location.pathname.includes("register")){
+    if(location.pathname.includes("register") || location.pathname.includes("checkout")){
       setIsDark(false);
     }
     else{
@@ -64,6 +69,14 @@ const Navbar = () => {
   const isMax540 = useMediaQuery('(max-width: 540px)');
   const isMin0 = useMediaQuery('(min-width: 0px)');
 
+  useEffect(() => {
+
+    const numOfItems = cartItems.reduce((accumulator, currentValue) => accumulator + currentValue.itemQuantity, 0);
+
+    setTotalItems(numOfItems);
+
+  }, [cartItems]);
+
  
 
  
@@ -102,7 +115,7 @@ const Navbar = () => {
 
                 <div className="nav-el-1-links search-link" onClick={handleSearchClick}>Search</div>
 
-                <div className="nav-el-1-links cart-link" onClick={handleCartClick}>Cart (0)</div>
+                <div className="nav-el-1-links cart-link" onClick={handleCartClick}>{`Cart (${totalItems})`}</div>
                 
               </div>
   

@@ -44,7 +44,7 @@ const useFetch = (url) => {
 
                 setPending(true);
 
-               console.log(res);
+            //    console.log(res);
 
                 if(res.status === 200){
                     setData(res.data);    
@@ -82,8 +82,6 @@ const useFetch = (url) => {
                 }
 
                 if(error.code === "ERR_BAD_REQUEST"){
-
-                    setLoggedIn(false);
                     
                     SessionManager.removeUserSession();
 
@@ -94,7 +92,7 @@ const useFetch = (url) => {
 
                 if(error.response.status === 401){
 
-                    setLoggedIn(false);
+                    // setLoggedIn(false);
                     SessionManager.removeUserSession();
                     
                     msg =  "User not authorized. Please provide the correct credential"; 
@@ -104,7 +102,7 @@ const useFetch = (url) => {
 
                 if(error.response.status === 403){
 
-                    setLoggedIn(false);   
+                    // setLoggedIn(false);   
                     SessionManager.removeUserSession();
 
                     
@@ -143,7 +141,7 @@ const useFetch = (url) => {
 
         getData();
 
-    }, [setData, url, setLoggedIn, setPending]);
+    }, [setData, url, setPending]);
 
    return {data};
     

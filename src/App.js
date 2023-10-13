@@ -10,7 +10,8 @@ import Orders from './admin/pages/orders/Orders';
 import Transactions from './admin/pages/Transactions';
 import AdminProducts from './admin/pages/products/AdminProducts';
 import DashboardLayout from './layouts/DashboardLayout';
-import BusinessDataProvider from './context/BusinessDataContext';
+import SelectedBusinessProduct from './pages/selected-products/SelectedBusinessProduct';
+import Checkout from './pages/checkouts/checkout-page/Checkout';
 
 function App() {
   return (
@@ -18,19 +19,20 @@ function App() {
       <BrowserRouter>
 
         <Routes>
+          
 
-          <BusinessDataProvider>
+          <Route path="/" element={ <Layout /> }> 
 
-            <Route path="/" element={ <Layout /> }> 
+            <Route path="/" element={ <Products /> } /> 
+            <Route path="/register" element={ <CreateAccount /> } /> 
+            <Route path="/products/:id" element={ <SelectedBusinessProduct /> } /> 
+            <Route path="/checkout" element={ <Checkout /> } /> 
 
-              <Route path="/" element={ <Products /> } /> 
-              <Route path="/register" element={ <CreateAccount /> } /> 
 
+            
+          </Route>
 
-              
-            </Route>
-
-          </BusinessDataProvider>
+         
 
 
           <Route path="/access-auth/business/account" element={ <SignIn /> } /> 
