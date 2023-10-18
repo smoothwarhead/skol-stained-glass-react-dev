@@ -1,4 +1,4 @@
-
+import {AdvancedImage} from '@cloudinary/react';
 import './product-details.css';
 import { HiMinus, HiPlus } from 'react-icons/hi';
 
@@ -6,23 +6,10 @@ import { HiMinus, HiPlus } from 'react-icons/hi';
 
 
 
+const MobileBusinessProductDetails = (props) => {
 
 
-
-
-
-
-const BusinessProductDetails = (props) => {
-
-
-    const {addToCart, itemName, itemQuantity, setItemQuantity, setItemDimensions, itemDimensions, itemDescription,  itemPrice, setItemPrice } = props
-
-    
-
-   
-   
-
-    
+    const {addToCart, itemName, productImage, itemQuantity, setItemQuantity, setItemDimensions, itemDimensions, itemDescription,  itemPrice, setItemPrice } = props;
 
 
     const handlePlus = () =>{
@@ -68,12 +55,20 @@ const BusinessProductDetails = (props) => {
         // console.log(index);
     };
 
-  
 
   return (
     <div className="product-details-con">
         <div className="p-details-name">{itemName}</div>
         <div className="p-details-price">{`$${parseFloat(itemPrice).toFixed(2).toString()}`}</div>
+
+        <div className="product-image-pre-con">
+            <div className="product-image-pre-img">
+                <AdvancedImage style={{maxWidth: '100%', maxHeight: '100%'}} cldImg={productImage} />
+
+            </div>
+        </div>
+
+
         <div className="p-details-dim-con">
             <span className="p-lbl">Dimensions:</span>
             <div className="dim-con">
@@ -91,6 +86,7 @@ const BusinessProductDetails = (props) => {
                 }
             </div>
         </div>
+
         <div className="p-details-qty-con">
             <span className="p-lbl">Quantity:</span>
             <div className="qty-con">
@@ -118,8 +114,6 @@ const BusinessProductDetails = (props) => {
 
     </div>
   )
-
-  
 }
 
-export default BusinessProductDetails;
+export default MobileBusinessProductDetails;

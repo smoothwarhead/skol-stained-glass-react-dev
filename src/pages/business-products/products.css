@@ -21,3 +21,43 @@
     flex-wrap: wrap;
    
 }
+
+
+
+/* media query */
+/* 
+@media (max-width: 768px) and (min-width: 0px){
+    
+    .bus-prdt-con{       
+        justify-content: center;       
+    }
+
+   
+
+
+} */
+
+
+@media (max-width: 700px) and (min-width: 540px){
+    
+    .bus-prdt-con{       
+        justify-content: center;       
+    }
+
+   
+
+
+}
+
+@media (max-width: 400px) and (min-width: 0px){
+    
+    .bus-prdt-con{ 
+        flex-direction: column;
+        flex-wrap: nowrap;
+
+    }
+
+   
+
+
+}

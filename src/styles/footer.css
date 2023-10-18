@@ -1,8 +1,9 @@
 .footer{
     width: 100%;
     background: #F9F1F3;
-    height: 30vh;
+    height: fit-content;
     margin-top: 50px;
+    position: relative;
    
     /* position: fixed;
     bottom: 0;

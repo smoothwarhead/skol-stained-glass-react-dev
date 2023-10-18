@@ -1,11 +1,11 @@
 .product-details-con{
     width: 80%;
-    height: fit-content;
+    height: 100%;
     background: #2b0d21;
     margin: auto;
     font-family: 'Cinzel', serif;
     padding: 30px 20px;
-
+  
 }
 
 .p-details-name{
@@ -30,7 +30,7 @@
     width: 100%;
     height: fit-content;
     margin-bottom: 25px;
-
+   
 }
 
 .p-lbl{
@@ -52,7 +52,7 @@
 .dim-text{
     width: fit-content;
     height: fit-content;
-    margin-right: 15px;
+    margin: 0 15px 8px 0;
     font-family: 'Montserrat', sans-serif;
     color: #fff;
     padding: 8px 20px;
@@ -153,4 +153,156 @@
     font-family: 'Montserrat', sans-serif;
     margin-bottom: 40px;
    
+}
+
+
+@media (max-width: 1120px) and (min-width: 0px){
+    
+    .product-details-con{
+        width: 100%;
+    }
+
+   
+
+}
+
+
+
+
+@media (max-width: 1120px) and (min-width: 768px){
+    
+  
+
+    .p-details-name{
+        font-size: 1.5em;
+        margin-bottom: 15px;
+    }
+
+    .p-details-price{
+        font-size: 1.25em;
+        line-height: 12px;
+        margin-bottom: 20px;
+
+    }
+
+    .p-lbl{
+        font-size: 1.25em;
+        
+    }
+   
+
+}
+
+
+@media (max-width: 840px) and (min-width: 768px){
+    
+  
+    .product-description{
+        font-size: 0.875em;
+    }
+   
+
+}
+
+
+@media (max-width: 768px) and (min-width: 430px){
+    
+    .product-details-con{
+        width: 100%;
+        background: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;  
+       
+    
+    }
+
+    .p-details-name{
+        font-size: 1.25em;
+        margin-bottom: 15px;
+       
+    }
+
+    .p-details-price{
+        font-size: 1em;
+        text-align: center;
+    }
+
+    .p-lbl{
+        font-size: 1.125em;
+    }
+
+    .dim-text{
+        font-size: 14px;
+    }
+
+    .qty-con{
+        font-size: 14px;
+    }
+
+    .product-description{
+        font-size: 14px;
+    }
+    
+   
+
+}
+
+@media (max-width: 430px) and (min-width: 0px){
+    
+    .product-details-con{
+        width: 100%;
+        background: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;  
+        padding: 20px 0;
+       
+    
+    }
+
+    .p-details-name{
+        font-size: 1.125em;
+        margin-bottom: 10px;
+       
+    }
+
+    .p-details-price{
+        font-size: 0.875em;
+        text-align: center;
+    }
+
+    .p-lbl{
+        font-size: 1em;
+    }
+
+    .dim-text{
+        font-size: 12px;
+    }
+
+    .qty-con{
+        font-size: 12px;
+        /* padding: 8px 12px; */
+    }
+
+    .qty-text{
+        width: 50px;
+        height: 25px;
+    }
+
+    /* .qty-plus-btn{
+        
+        width: 50px;
+        height: 25px;
+            
+    } */
+
+    .product-description{
+        font-size: 12px;
+    }
+    
+   
+
 }

@@ -15,18 +15,24 @@ const MainLayout = ({ children }) => {
   return (
     <div className={`main-page ${checkSlide ? "slide-open" : ""}`}>
 
-        <div className="nav-section">
-          <Navbar />
-        </div>
+      {/* <div className="nav-section">
+        <Navbar />
+      </div> */}
+
+      <Navbar />
 
 
-        <div className="body-section">
-            {children}
-        </div>
+      <div className="body-section">
+          {children}
+      </div>
 
-        <div className="footer-section">
-            <Footer />
-        </div>
+      <Footer />
+
+
+      {/* <div className="footer-section">
+          <Footer />
+      </div> */}
+      
     </div>
   )
 }

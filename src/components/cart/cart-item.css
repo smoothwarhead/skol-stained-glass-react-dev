@@ -5,14 +5,13 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
-    /* border: 1px solid white; */
     padding: 20px 0;
+   
 }
 
 .cart-item-left{
     width: 25%;
     height: 100%;
-    /* border: 1px solid red; */
    
 }
 
@@ -85,4 +84,70 @@
     font-family: "Aviano", 'Cinzel', serif;
     font-size: 16px;
     color: #fff;
+}
+
+
+
+@media (max-width: 840px) and (min-width: 480px){
+    .cart-item-con{
+        height: 25%;
+
+    }
+
+    .cart-item-left{
+        width: 22%;
+    }
+
+    .item-name{
+        font-size: 16px;
+        line-height: 10px;
+    }
+
+    .item-dim{
+        font-size: 12px;
+
+    }
+
+    .item-remove-btn{
+        font-size: 12px;
+        
+    }
+
+    .item-total-price{
+        font-size: 14px;
+    }
+
+   
+}
+
+@media (max-width: 480px) and (min-width: 0px){
+    .cart-item-con{
+        
+        height: 25%;
+    }
+
+    .cart-item-left{
+        width: 20%;
+    }
+
+    .item-name{
+        font-size: 4vw;
+        line-height: 10px;
+    }
+
+    .item-dim{
+        font-size: 3.5vw;
+
+    }
+
+    .item-remove-btn{
+        font-size: 3vw;
+        
+    }
+
+    .item-total-price{
+        font-size: 3vw;
+    }
+
+   
 }

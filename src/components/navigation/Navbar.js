@@ -88,21 +88,21 @@ const Navbar = () => {
       <MenuSlide />
 
       <div className='navbar'>
-
+        <div className="wrapper">
           <div className="left-el">
-            <Link to="/">
-              <div className="logo-container">
+              <Link to="/">
+                <div className="logo-container">
 
-                <div className="logo-img">
-                  <img src={logo} alt="Logo" />
+                  <div className="logo-img">
+                    <img src={logo} alt="Logo" />
+
+                  </div>
+                  <div className={isDark ? "comp-name isDark" : "comp-name isLight"}>Skol Stained Glass</div>
 
                 </div>
-                <div className={isDark ? "comp-name isDark" : "comp-name isLight"}>Skol Stained Glass</div>
-
-              </div>
-            </Link>
+              </Link>
           </div>
-          
+
           <div className={isDark ? "right-el isDark" : "right-el isLight"}>
 
             <div className="nav-el nav-el-1">
@@ -139,52 +139,68 @@ const Navbar = () => {
           </div>
 
 
+
+
+        </div>
+
+         
+          
+          
+
+
       </div>
 
 
       <div className="mobile-navbar">
-            
-        <div className="mobile-menu-icon" onClick={handleMenuClick}>
-          <GiHamburgerMenu className={isDark ? 'menu-icon isDark' : 'menu-icon isLight'} />
-        </div>
 
-        <div className="m-logo-container">
-
-          
-            <div className="mobile-logo">
-              <Link to="/">
-                <div className="m-logo-img">
-                  <img src={logo} alt="Logo" />
-
-                </div>
-                <div className={isDark ? "m-comp-name isDark" : "m-comp-name isLight" }>Skol Stained Glass</div>
-              </Link>
-
-            </div>
-        </div>
+        <div className="wrapper">
         
-
-        <div className={isDark ? "mobile-nav-el isDark" : "mobile-nav-el isLight"}>
-          <div className="mobile-nav-el-links m-account-link" onClick={handleAccountClick}>
-            Account
+            
+          <div className="mobile-menu-icon" onClick={handleMenuClick}>
+            <GiHamburgerMenu className={isDark ? 'menu-icon isDark' : 'menu-icon isLight'} />
           </div>
 
-          <div className="mobile-nav-el-links m-search-link" onClick={handleSearchClick}>
-            {/* Search */}
-            {isMax540 && isMin0 ? <FaSearch className='m-search-icon'/> : "Search"}
-          </div>
+          <div className="m-logo-container">
 
-          <div className="mobile-nav-el-links m-cart-link" onClick={handleCartClick}>
-            {/* Cart (0) */}
-            {isMax540 && isMin0 ? <HiOutlineShoppingCart className='m-cart-icon'/> : "Cart" }
-            <span>(0)</span>
+            
+              <div className="mobile-logo">
+                <Link to="/">
+                  <div className="m-logo-img">
+                    <img src={logo} alt="Logo" />
+
+                  </div>
+                  <div className={isDark ? "m-comp-name isDark" : "m-comp-name isLight" }>Skol Stained Glass</div>
+                </Link>
+
+              </div>
           </div>
           
-        </div>
 
+          <div className={isDark ? "mobile-nav-el isDark" : "mobile-nav-el isLight"}>
+            <div className="mobile-nav-el-links m-account-link" onClick={handleAccountClick}>
+              Account
+            </div>
+
+            <div className="mobile-nav-el-links m-search-link" onClick={handleSearchClick}>
+              {/* Search */}
+              {isMax540 && isMin0 ? <FaSearch className='m-search-icon'/> : "Search"}
+            </div>
+
+            <div className="mobile-nav-el-links m-cart-link" onClick={handleCartClick}>
+              {/* Cart (0) */}
+              {isMax540 && isMin0 ? <HiOutlineShoppingCart className='m-cart-icon'/> : "Cart " }
+              <span>{`(${totalItems})`}</span>
+            </div>
+            
+          </div>
+
+          
+
+        </div>
 
 
       </div>
+
     </>
   )
 }

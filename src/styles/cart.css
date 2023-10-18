@@ -58,7 +58,6 @@
 
 .sub-total-value{
     font-size: 24px;
-
 }
 
 .checkout-btn{
@@ -81,4 +80,22 @@
     background: transparent;
     border: 1px solid #fff;
     color: #fff;
+}
+
+
+@media (max-width: 480px) and (min-width: 0px){
+
+    .sub-total-con{
+        padding: 0 10px;
+    }
+
+    .sub-total-title{
+        font-size: 3.5vw;
+    }
+
+    .sub-total-value{
+        font-size: 4vw;
+    }
+
+   
 }

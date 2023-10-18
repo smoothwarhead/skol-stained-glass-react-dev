@@ -1,7 +1,8 @@
 .bus-product-details-con{
     width: 100%;
-    height: 90vh;
+    /* height: 90vh; */
     margin-top: 50px;
+  
 }
 
 .all-product-btn{
@@ -42,7 +43,7 @@
 .images-preview{
     width: 8%;
     height: 80%;
-  
+ 
 }
 
 .images-preview-img{
@@ -60,6 +61,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+ 
+
 }
 
 .product-image-pre-img{
@@ -68,11 +71,74 @@
     display: flex;
     justify-content: center;
     align-items: center;
-   
+  
 }
 
 .main-product-details-con{
     width: 50%;
     height: 100%;
+   
 }
 
+
+
+
+@media (max-width: 768px) and (min-width: 0px){
+
+    .bus-product-details{ 
+        display: block; 
+    
+
+    }
+
+
+    
+
+
+}
+
+@media (max-width: 768px) and (min-width: 540px){
+
+
+    .product-image-pre-con{
+        width: 50%;
+        height: 30%;
+        margin-bottom: 60px;
+       
+    }
+    
+    .product-image-pre-img{
+        width: 70%;
+        height: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* border: 1px solid red;     */
+       
+    }
+
+
+}
+
+@media (max-width: 540px) and (min-width: 0px){
+
+
+    .product-image-pre-con{
+        width: 60%;
+        height: 30%;
+        margin-bottom: 40px;
+       
+    }
+    
+    .product-image-pre-img{
+        width: 100%;
+        height: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* border: 1px solid red;     */
+       
+    }
+
+
+}
