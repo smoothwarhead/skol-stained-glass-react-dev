@@ -56,9 +56,9 @@ const CreateAccount = () => {
     <>
        
         <div className='create-acc-page'>
-            <div className="nav-section">
-                <Navbar />
-            </div>
+            
+            <Navbar />
+            
 
             <div className="account-section">
                 <form className="form-container" noValidate onSubmit={handleSubmit}>

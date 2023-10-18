@@ -38,7 +38,7 @@ const SelectedBusinessProduct = () => {
     
 
 
-    const {cartItems, handleCart } = useContext(BusinessDataContext);
+    const {handleCart } = useContext(BusinessDataContext);
     const {setSlideCart} = useContext(NavContext);
 
 
@@ -430,18 +430,14 @@ const SelectedBusinessProduct = () => {
     // }, [id, setPending]);
 
 
-    useEffect(() => {
-
-        console.log("dimensions", itemDimensions);
-        console.log("cartItems", cartItems);
-
+    // useEffect(() => {
         
 
-        const numOfItems = cartItems.reduce((accumulator, currentValue) => accumulator + currentValue.itemQuantity, 0);
+    //     const numOfItems = cartItems.reduce((accumulator, currentValue) => accumulator + currentValue.itemQuantity, 0);
 
-        console.log(numOfItems);
+    //     console.log(numOfItems);
 
-    }, [cartItems, itemDimensions]);
+    // }, [cartItems, itemDimensions]);
 
 
     // Create and configure your Cloudinary instance.
