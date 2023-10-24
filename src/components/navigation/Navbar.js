@@ -87,7 +87,7 @@ const Navbar = () => {
       <SearchSlide />
       <MenuSlide />
 
-      <div className='navbar'>
+      <div className={`navbar ${isDark ? "" : "light-nav"}`}>
         <div className="wrapper">
           <div className="left-el">
               <Link to="/">
@@ -103,7 +103,7 @@ const Navbar = () => {
               </Link>
           </div>
 
-          <div className={isDark ? "right-el isDark" : "right-el isLight"}>
+          <div className={`right-el ${isDark ? "isDark" : "isLight"}`}>
 
             <div className="nav-el nav-el-1">
 
@@ -151,7 +151,7 @@ const Navbar = () => {
       </div>
 
 
-      <div className="mobile-navbar">
+      <div className={`mobile-navbar ${isDark ? "" : "light-nav"}`}>
 
         <div className="wrapper">
         

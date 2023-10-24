@@ -10,6 +10,10 @@
 
 }
 
+.navbar.light-nav{
+    background: #fff;
+}
+
 .navbar .wrapper{
     width: 90%;
     height: 100%;
@@ -157,6 +161,13 @@
 
    
 }
+
+.mobile-navbar.light-nav{
+    background: #fff;   
+
+}
+
+
 
 .mobile-navbar .wrapper{
     width: 90%;
