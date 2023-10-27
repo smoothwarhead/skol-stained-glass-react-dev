@@ -1,24 +1,42 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { addStaffInputs } from '../../files/inputs'
 import FormInput from '../../components/forms/FormInput'
 import '../../styles/adminStyles/createStaff.css';
+import useApi from '../../hooks/useApi';
+import Modal from './Modal';
+import ConfirmationPage from './ConfirmationPage';
+import { useNavigate } from 'react-router-dom';
+import { DataContext } from '../../context/DataContext';
+
 
 const initialValues = {
     firstName: "",
     lastName: "",
     email: "",
-    role: "Admin",
+    role: "Staff",
     phoneNumber: "",
+
 }
 
 
 
-const CreateStaff = ({ setModalOpen }) => {
+
+const CreateStaff = ({ closeModal }) => {
+
+    const { modalOpen, setModalOpen, message } = useContext(DataContext);
+
 
     const [values, setValues] = useState(initialValues);
 
+    const { registerStaff } = useApi();
+
     const [error, setError] = useState(false);
 
+   
+    const navigate = useNavigate();
+
+    
+    
 
     const handleChange = (e) => {
         setValues({ ...values, [e.target.name]: e.target.value});
@@ -35,74 +53,85 @@ const CreateStaff = ({ setModalOpen }) => {
       
         else{
             console.log(values);
+            registerStaff(values);
         }
 
 
     }
 
 
-    // split the inputs into 2
+    const handleOk = () => {
+        setModalOpen(false);
+        navigate("/access-auth/business/admin/staffs");
+        window.location.reload();
+    }
 
-    // const middleIndex = Math.ceil(addStaffInputs.length / 2);
 
-    // const firstHalf = addStaffInputs.slice().splice(0, middleIndex);   
-    // const secondHalf = addStaffInputs.slice().splice(-middleIndex);
-
+    
 
   return (
     <>
-        <div className="s-acc-container" noValidate onSubmit={handleSubmit}>
-                    <div className="s-acc-title">Add Staff</div>
-                    <div className="s-inp-container">
+        {  modalOpen &&
+            <Modal                     
+              modalBody={ <ConfirmationPage handleOk={handleOk} /> }
+              modalType={message.type}
+              closeModal={closeModal}
+                
+            />
+        }
+        <div className="s-acc-container" noValidate>
+                <div className="s-acc-title">Add Staff</div>
+                <div className="s-inp-container">
 
-                        <div className="s-inps s-inp-container-1">
-                            {
-                                addStaffInputs.slice().splice(0, 3).map((input, index) => (
-                                    <FormInput 
-                                        key={index }
-                                        inputType="text"
-                                        {...input}
-                                        icon={null}    
-                                        value={values[input.name]} 
-                                        handleChange={handleChange}  
-                                        isPassword={input.isPassword}
-                                        errorMessage = {input.errorMessage}
-                                        error = {error}
-                                        cName = "s-input"
-                                    />
-                                )) 
-                            }
-                        </div>
-
-                        <div className="s-inps s-inp-container-2">
-
-                            {
-                                addStaffInputs.slice().splice(-2).map((input, index) => (
-                                    <FormInput 
-                                        key={index }
-                                        inputType="text"
-                                        {...input}
-                                        icon={null}    
-                                        value={values[input.name]} 
-                                        handleChange={handleChange}  
-                                        isPassword={input.isPassword}
-                                        errorMessage = {input.errorMessage}
-                                        error = {error}
-                                        cName = "s-input"
-                                    />
-                                )) 
-                            }
-
-                        </div>
-
-                        
-                       
-
-                    
+                    <div className="s-inps s-inp-container-1">
+                        {
+                            addStaffInputs.slice().splice(0, 3).map((input, index) => (
+                                <FormInput 
+                                    key={index }
+                                    inputType="text"
+                                    {...input}
+                                    icon={null}    
+                                    value={values[input.name]} 
+                                    handleChange={handleChange}  
+                                    isPassword={input.isPassword}
+                                    validate={input.validate}
+                                    errorMessage = {input.errorMessage}
+                                    error = {error}
+                                    cName = "s-input"
+                                />
+                            )) 
+                        }
                     </div>
 
+                    <div className="s-inps s-inp-container-2">
+
+                        {
+                            addStaffInputs.slice().splice(-2).map((input, index) => (
+                                <FormInput 
+                                    key={index }
+                                    inputType="text"
+                                    {...input}
+                                    icon={null}    
+                                    value={values[input.name]} 
+                                    handleChange={handleChange}  
+                                    isPassword={input.isPassword}
+                                    errorMessage = {input.errorMessage}
+                                    error = {error}
+                                    cName = "s-input"
+                                />
+                            )) 
+                        }
+
+                    </div>
+
+                    
+                    
+
+                
+                </div>
+
                 <div className="s-acc-footer">
-                    <div className="s-acc-btns s-acc-cancel-btn" onClick={() => setModalOpen(false)}>Cancel</div>
+                    <div className="s-acc-btns s-acc-cancel-btn" onClick={closeModal}>Cancel</div>
                     <div className="s-acc-btns s-acc-add-btn" onClick={handleSubmit}>Add Staff</div>
                 </div>
 

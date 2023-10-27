@@ -1,18 +1,21 @@
 import React from 'react'
-import { sideNav } from '../modules/SideItems'
+
 import { NavLink } from 'react-router-dom'
+import SessionManager from '../../files/SessionManager'
+import { adminSideNav, staffSideNav } from '../modules/SideItems'
 
 
 const SideBar = () => {
 
-    // const { pathname } = useLocation();
+    const role = SessionManager.getRole(); 
 
   return (
     <>
         <div className="side-bar">
             <div className="side-bar-link">
-                {
-                    sideNav.map((item) => (
+                {role.toLowerCase() === "staff" ?
+
+                    staffSideNav.map((item) => (
                         <NavLink
                             to={item.to}
                             key={item.name}                           
@@ -21,6 +24,26 @@ const SideBar = () => {
                             //     console.log(item.to + ' ' + isActive)
                             // }}
 
+                            end
+                            
+                        >
+                            <div className="nav-icon">{item.icon}</div>
+                           
+                            <p className='nav-items'>                            
+                                {item.name}
+                            </p>
+
+                        </NavLink>
+                    ))
+
+                    :
+
+                    adminSideNav.map((item) => (
+                        <NavLink
+                            to={item.to}
+                            key={item.name}                           
+                            
+                            
                             end
                             
                         >

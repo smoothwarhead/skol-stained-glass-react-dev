@@ -192,12 +192,22 @@
 }
 
 .password-toggle{
-    width: 8%;
-    height: 50%;
+    width: fit-content;
+    height: fit-content;
     position: absolute;
+    right: 15px;
+    z-index: 50;
+   
+}
+
+.haslbl{
+    top: 35px;
+
+}
+
+.nolbl{
     top: 15px;
-    right: 10px;
-    z-index: 5;
+    
 }
 
 .password-icon{
@@ -250,7 +260,7 @@
     color: #dd1c1c;
 }
 
-.pwd-cons.passed{
+.passed{
     color: rgb(71, 164, 71);
     opacity: 1;
 }
@@ -264,6 +274,18 @@
     display: flex;
     margin-top: 10px;
     justify-content: space-between;
+}
+
+.auth-error{
+    width: fit-content;
+    height: fit-content;
+    background: #f7d6d6;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 0.875em;
+    font-weight: 500;
+    color: #dd1c1c;
+    margin-bottom: 10px;
 }
 
 

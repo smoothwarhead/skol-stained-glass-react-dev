@@ -1,0 +1,357 @@
+
+.add-product-container{
+    font-family: 'Montserrat', sans-serif;
+    width: 80%;
+    height: 100%;
+    margin: 20px auto;
+    
+}
+
+.add-product-title{
+    color: #5b5f32;
+    font-size: 1.5em;
+    font-weight: 500;
+    
+}
+
+.add-product-btn-container{
+   width: 100%;
+   display: flex;
+   justify-content: flex-end;
+   margin-top: 30px;
+    
+}
+
+
+.add-product-el-container{
+    width: 100%;
+    height: 100%;
+    color: #917B42;
+    /* font-weight: 500; */
+    margin-top: 20px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+ 
+}
+
+
+.add-product-el-1{   
+    width: 35%;
+    height: 100%;
+  
+}
+
+.add-product-el-2{ 
+    width: 60%;
+    height: 100%;
+   
+}
+
+
+.image-upload-container{
+    width: 100%;
+    height: fit-content;
+    margin-top: 30px;
+   
+}
+
+.img-section{
+    width: 100%;
+    height: 35vh;
+    border-radius: 10px 10px 0 0;
+    position: relative;
+    border: 1px solid red;
+
+}
+
+.img-actions{
+    width: 100%;
+    height: 12%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 10px;
+    background: #E8E7E7;
+    border-radius: 10px 10px 0 0;
+
+}
+
+.image-action-icon{
+    width: 20px;
+    height: 20px;
+    color: #5b5f32;
+    cursor: pointer;
+}
+
+.image-action-icon:hover{
+    background: #a29e9e;
+}
+
+.actions{
+    background: #FDF4F1;
+    border: 1px solid #a29e9e;
+    border-radius: 10px;
+    width: 8vw;
+    height: 15vh;
+    z-index: 5;
+    position: absolute;
+    top: 12%;
+    right: -25%;
+    padding-top: 10px;
+}
+
+.acts{
+    width: 100%;
+    height: fit-content;
+    padding: 8px;
+    cursor: pointer;
+    font-size: 0.75em;
+    color: #5b5f32;
+}
+
+.acts:hover{
+    background: #E8E7E7;
+}
+
+.image-upload{
+    width: 100%;
+    height: 88%;
+    border: 1px solid #E8E7E7;
+}
+
+.img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* border-radius: 50%; */
+}
+
+.camera-container{
+    width: 55%;
+    height: 20vh;
+    background: #E8E7E7;
+    border-radius: 10px;
+    /* margin: auto; */
+    border: 1px solid #E6C6BD;
+    z-index: 3;
+    transition: all 0.5s ease-in-out;
+    
+}
+
+.camera-container:hover{
+    background: #a29e9e; 
+}
+
+
+
+.upload-icon-con{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    z-index: 1;
+    
+    
+}
+
+.image-upload-lbl{  
+    display: flex;  
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+}
+
+/* .image-upload-lbl:hover{
+
+} */
+
+.upload-icon{ 
+    display: block; 
+    color:  #5b5f32; 
+    width: 30%;
+    height: 30%;
+}
+
+#input[type="file"]{
+    display: none;
+}
+
+
+
+@media (max-width: 1280px) and (min-width: 1120px){
+
+    .camera-container{
+        width: 60%;
+    }
+
+  
+
+
+}
+
+@media (max-width: 1120px) and (min-width: 980px){
+
+    .camera-container{
+        width: 80%;
+    }
+
+  
+
+
+}
+
+@media (max-width: 1120px) and (min-width: 720px){
+
+    .camera-container{
+        width: 100%;
+    }
+
+  
+
+
+}
+
+@media (max-width: 1100px) and (min-width: 980px){
+
+    .add-product-title{
+        font-size: 2.125vw;       
+    
+    }
+
+  
+
+
+}
+
+@media (max-width: 980px) and (min-width: 860px){
+
+    .add-product-title{
+        font-size: 2.125vw;       
+    
+    }
+
+  
+
+
+}
+
+@media (max-width: 860px) and (min-width: 768px){
+
+    .add-product-title{
+        font-size: 2.5vw;       
+    
+    }
+
+  
+
+
+}
+
+
+
+
+@media (max-width: 720px) and (min-width: 0px){
+
+    .add-product-el-container{
+        display: block;    
+           
+    
+    }
+
+    
+    .add-product-el-1{   
+        width: 100%;
+        height: fit-content;
+    
+        
+    }
+
+    .add-product-el-2{ 
+        width: 100%;
+        height: 60%;
+      
+    }
+
+}
+
+@media (max-width: 720px) and (min-width: 600px){
+
+    .camera-container{
+        width: 40%;
+    }
+
+  
+
+
+}
+
+
+@media (max-width: 768px) and (min-width: 600px){
+
+    .add-product-title{
+        font-size: 2.625vw;       
+    
+    }
+
+}
+
+@media (max-width: 600px) and (min-width: 440px){
+
+   
+    .camera-container{
+        width: 55%;
+    }
+
+  
+
+
+}
+
+
+@media (max-width: 600px) and (min-width: 400px){
+
+    .add-product-title{
+        font-size: 3.625vw;       
+        padding-left: 10px;     
+    
+    }
+
+    .camera-container{
+        width: 55%;
+    }
+
+  
+
+
+}
+
+@media (max-width: 440px) and (min-width: 0px){
+
+   .add-product-container{
+    width: 100%;
+   }
+    .camera-container{
+        width: 55%;
+    }
+
+  
+
+
+}
+
+@media (max-width: 400px) and (min-width: 0px){
+
+    .add-product-title{
+        font-size: 4vw;  
+        padding-left: 10px;     
+    
+    }
+
+  
+
+
+}

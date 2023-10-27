@@ -1,15 +1,18 @@
 import React, { useContext, useEffect, useRef } from 'react'
 import { NavLink } from 'react-router-dom';
-import { sideNav } from '../../admin/modules/SideItems';
+import { adminSideNav, staffSideNav } from '../../admin/modules/SideItems';
 import { gsap, Power1 } from 'gsap';
 import '../../styles/slides.css'
 import NavContext from '../../context/NavContext';
+import SessionManager from '../../files/SessionManager';
 
 
 
 const AdminMenuSlide = () => {
 
     const { slideAdminMenu, setSlideAdminMenu } = useContext(NavContext);
+
+    const role = SessionManager.getRole();
     
 
     const aMenuRef = useRef();
@@ -62,16 +65,33 @@ const AdminMenuSlide = () => {
             <div className="m-nav-body">
                 
                 <div className="m-nav-body-el">
-                    {
-                        sideNav.map((item, index) => (
-                        <NavLink
-                            to={item.to}
-                            key={index}
-                            onClick={() => setSlideAdminMenu(false)}
-                        >
-                            {item.name}
-                        </NavLink>
-                    ))
+                    { role.toLowerCase() === "staff" ?
+
+                        staffSideNav.map((item, index) => (
+                            <NavLink
+                                to={item.to}
+                                key={index}
+                                onClick={() => setSlideAdminMenu(false)}
+                            >
+                                {item.name}
+                            </NavLink>
+
+                    
+                        ))
+
+                        : 
+                        adminSideNav.map((item, index) => (
+                            <NavLink
+                                to={item.to}
+                                key={index}
+                                onClick={() => setSlideAdminMenu(false)}
+                            >
+                                {item.name}
+                            </NavLink>
+
+                    
+                        ))
+
                     }
                 </div>
                 

@@ -1,30 +1,49 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 // import { Link } from 'react-router-dom';
 import '../../../styles/adminStyles/adminAccount.css';
-import { adminSignInInputs } from '../../../files/inputs';
+import { signInInputs, twoFaInputs } from '../../../files/inputs';
 import FormInput from '../../../components/forms/FormInput';
 import usePasswordToggle from '../../../hooks/usePasswordToggle';
+import useApi from '../../../hooks/useApi';
+import { Navigate } from 'react-router-dom';
+import { AuthContext } from '../../../context/AuthContext';
+
 
 
 
 
 const initialValues = {
-    userName: "",
+    email: "",
     password: ""
+}
+const initialTwoFaValues = {
+    code: ""
 }
 
 const SignIn = () => {
 
+    const { loggedIn } = useContext(AuthContext);
+
     const { InputType, Icon } = usePasswordToggle();
+    const { open2fa, twoFaEmail,  adminLogin, admin2FaLogin, authMessage } = useApi();
 
     const [values, setValues] = useState(initialValues);
+    const [twoFavalue, setTwoFaValue] = useState(initialTwoFaValues);
 
     const [error, setError] = useState(false);
+
+    
+    
 
 
 
     const handleChange = (e) => {
         setValues({ ...values, [e.target.name]: e.target.value});
+        
+    }
+
+    const handleTwoFaChange = (e) => {
+        setTwoFaValue({ ...twoFavalue, [e.target.name]: e.target.value});
         
     }
 
@@ -35,21 +54,37 @@ const SignIn = () => {
             setError(true);
         }
         
-        // if(!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)){
-        //     setError(true);
-        // }
         else{
-            console.log(values);
+            adminLogin(values);
+        }
+
+
+    }
+
+    const handleTwoFaSubmit = (e) => {
+        e.preventDefault();
+
+        if(twoFavalue.code === ""){
+            setError(true);
+        }
+        
+        else{
+            const twoFaData = {
+                code: twoFavalue.code,
+                email: twoFaEmail
+                
+            }
+
+            admin2FaLogin(twoFaData);
         }
 
 
     }
 
 
-
-
-
-
+    if(loggedIn){
+        return <Navigate to="/access-auth/business/admin"/>
+    }
 
 
 
@@ -59,36 +94,73 @@ const SignIn = () => {
         <div className='account-body'>
             <div className="admin-acc-container">
 
-                <div className="log">
-                    <div className="login"> login</div>
-                    <div className="log-info">
-                        <h3>Please enter your email and password</h3>
-                        <form onSubmit={handleSubmit}>
+                {/* {authError && <span className='auth-error'>{authMessage}</span>} */}
+                {authMessage && <span className='auth-error'>{authMessage}</span>}
 
-                            {
-                                adminSignInInputs.map((input, index) => (
+                {!open2fa ?
+                    <div className="log">
+                        <div className="login"> login</div>
+                        <div className="log-info">
+                            <h3>Please enter your email and password</h3>
+                            <form onSubmit={handleSubmit}>
 
-                                    <FormInput 
-                                        key={index }
-                                        inputType={!input.isPassword ? "text" : InputType}
-                                        {...input}
-                                        icon={!input.isPassword ? null : Icon}    
-                                        value={values[input.name]} 
-                                        handleChange={handleChange}  
-                                        isPassword={input.isPassword}
-                                        errorMessage = {input.errorMessage}
-                                        error = {error}
-                                        cName = "input"
-                                    />
+                                {
+                                    signInInputs.map((input, index) => (
 
-                                ))
-                            }
-                        
-                            <button>Login</button>
-                        </form>
-                        {/* <p>Don't have account? <Link href="sign-up.html">create an account</Link></p> */}
+                                        <FormInput 
+                                            key={index }
+                                            inputType={!input.isPassword ? "text" : InputType}
+                                            {...input}
+                                            icon={!input.isPassword ? null : Icon}    
+                                            value={values[input.name]} 
+                                            handleChange={handleChange}  
+                                            isPassword={input.isPassword}
+                                            errorMessage = {input.errorMessage}
+                                            error = {error}
+                                            cName = "input"
+                                        />
+
+                                    ))
+                                }
+                            
+                                <button>Login</button>
+                            </form>
+                            {/* <p>Don't have account? <Link href="sign-up.html">create an account</Link></p> */}
+                        </div>
                     </div>
-                </div>
+                    :
+                    <div className="log">
+                        
+                        <div className="fa-log-info">
+                            
+                            <span>Please enter the OTP sent to your email address.</span>
+                            <form onSubmit={handleTwoFaSubmit}>
+
+                                {
+                                    twoFaInputs.map((input, index) => (
+                                        <FormInput 
+                                            key={index}
+                                            inputType={!input.isPassword ? "text" : InputType}
+                                            {...input}
+                                            icon={!input.isPassword ? null : Icon}    
+                                            value={values[input.name]} 
+                                            handleChange={handleTwoFaChange}  
+                                            isPassword={input.isPassword}
+                                            validate={input.validate}
+                                            errorMessage = {input.errorMessage}
+                                            error = {error}
+                                            cName = "input"
+                                        />
+                                    ))
+                                }
+                            
+                                <button className='fa-btn'>Login</button>
+                            </form>
+                            
+                        </div>
+                    </div>
+
+                }
 
             </div>
         </div>

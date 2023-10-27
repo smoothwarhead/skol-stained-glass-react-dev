@@ -1,0 +1,84 @@
+.all-staff-table{
+    width: 100%;
+    height: fit-content;
+    margin-top: 30px;
+   
+}
+
+.tbl-body{
+    width: 100%;
+    /* height: fit-content; */
+    margin-top: 10px;
+   
+}
+
+
+.tbl-titles-container{
+    background: #5b5f32;
+    width: 100%;
+    height: fit-content;
+    padding: 8px 20px;
+    border-radius: 20px 20px 0px 0px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75em;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-align: center;
+
+}
+.tbl-titles{
+    width: 30%;
+    
+}
+
+.tbl-staff-container{
+    background: #f5e5e0;
+    width: 100%;
+    height: fit-content;
+    padding: 10px 20px;
+    color: #5b5f32;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75em;
+    font-weight: 500;
+    text-align: center;
+
+}
+
+.tbl-st{
+    width: 30%;
+    
+}
+
+
+.st-action-icons{
+    display: flex;
+    width: fit-content;
+    margin: auto;
+   
+}
+
+.st-icons{
+    display: flex;
+    width: fit-content;
+    margin: 0px 10px;
+    font-size: 1.375em;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+.st-icons:hover{
+    opacity: .6;
+}
+
+.st-edit-icon, .st-details-icon{
+    color: #65b17f;
+}
+
+.st-delete-icon{
+    color: #F55D46;
+}
